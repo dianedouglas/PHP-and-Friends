@@ -1,0 +1,54 @@
+Structural_Basics: The restaurant of the internet.
+
+The request/response sequence is how the client side (your computer and web browser) communicates with the server side (where the web page materials are stored).  
+
+For basic web pages, think of the client/server relationship like a person ordering food at a restaurant.
+
+1.	Enter a website address into the address bar: say http://www.epicodus.com
+	You've decided what you want to order off the menu.
+
+2.	Look up the IP address for http://www.epicodus.com 
+	This is the equivalent of trying to flag down the waiter. 
+
+3.	Browser sends a request for the web page at http://www.epicodus.com
+	You tell the waiter that you'd like to order the special. 
+
+4.	The request flies accross the internet and arrives at the epicodus web server.
+	The waiter gives your order to the kitchen. 
+
+5.  The server looks for the web page on its hard disk, and then returns it to the browser. 
+	The kitchen makes your food and is sent with your waiter back to your table (over the internet).
+
+6.	The browser displays the web page. 
+	The food is laid out on the table for you. Now you can eat it! (But don't eat your computer.)
+
+	
+
+Imagine that this is a restaurant which gives you a number when you place your order that you keep at your table. This is like your IP address.
+
+Every computer has an IP address, just like each guest must sit at a numbered table, and the kitchen staff aren't wandering all over the place - they stay in the kitchen (which in our example would have an IP address too). 
+
+Without those IP addresses, the waiter wouldn't know where to carry requests and responses to (food orders and plates) back and forth between the guests and the kitchen staff (clients and the server). 
+
+Luckily, this is a very fast restaurant because this process usually has to happen for each object on a page - pictures, flash files, etc. 
+
+But for a dynamic web page, the restaurant has some extra staff. PHP, SQL, and JavaScript. In this request/response sequence, the first 4 steps are the same. You order the special. But when the kitchen receives your request, there are some new steps. 
+
+4.1		The server notices that the web page code includes PHP scripting, and so passes the PHP code to the PHP interpereter. 
+		THe chef notices that the recipe involves a puff pastry. Puff pastry is a massive pain so he hands that part of the recipe off to the pastry chef to deal with. 
+
+4.2		The PHP interpreter notices some MySQL statements, which are passed to the MySQL database engine. 
+		The pastry chef needs a bunch of ingredients prepared, so he tells a line cook to take care of parts of the recipe. 
+
+4.3		The MySQL database returns the results called for by the MySQL commands to the PHP interpreter.
+		The line cook fetches the ingredients he needs out of the refridgerator, preps them and returns them to to the pastry chef. 
+
+4.4		The PHP interpreter completes running the PHP code with the results from the MySQL databse, and returns the results back to the web server.
+		The pastry chef finishes his part of the dish and gives it to the head chef to finish putting it together with the rest of the meal. 
+
+And then steps 5 and 6 can be completed. Your meal is put on a plate and brought to your table. 
+
+Sometimes the pages returned to your browser involve Javascript. But that code is run locally by the client. This is rather like if you had ordered something like fajitas. You put the veggies and cheese and meat together in a tortilla at your table - the kitchen staff doesn't do it for you. Javascript can make requests back to the server, just like you might decide you want some extra sour cream or guacamole on the side. But it is executed on the client side - at your table. 
+
+
+
