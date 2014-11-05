@@ -54,7 +54,7 @@ Javascript can manipulate HTML elements in your page, as well as CSS (cascading 
 
 Ajax is kind of like an extra guest at your table that doesn't want to wait to flag down the waiter when they need some more salt. They'll just run into the back of the restaurant, grab some salt and bring it to your table without bothering anyone to do it for them.
 
-MySQL is a database system which can be used to find data to use in your browser. It is the restaurant's storage system of refridgerators, freezers, etc. And it is also like having a special helper in the kitchen who's job it is to keep track of where to find all the ingredients being stored for the restaurant, as information about those ingredients. How much flour do you have? How many eggs do you have who's expiration date is before today's date? These are all things that MySQL handles for your website. It finds and serves you data. User profiles, statistics, addresses and phone numbers, anything that can be stored in systems of tables.
+MySQL (Structured Query Language) is a database system which can be used to find data to use in your browser. It is the restaurant's storage system of refridgerators, freezers, etc. And it is also like having a special helper in the kitchen whose job it is to keep track of where to find all the ingredients being stored for the restaurant, as well as information about those ingredients. How much flour do you have? How many eggs do you have? How many of them have not expired yet? These are all things that MySQL handles for your website. It finds and serves you data. User profiles, statistics, addresses and phone numbers, anything that can be stored in systems of tables.
 
 
 
