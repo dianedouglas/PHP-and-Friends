@@ -1,0 +1,74 @@
+GET STARTED:
+
+git init
+	make a blank git repo in the current folder
+
+git add [file/folder]
+	add a file or folder to your local repository you just created on your computer. 
+	[file/folder] is the file or folder's path name. 
+	To get it just drag the file or folder with your mouse from finder into the terminal after typing the first part of the command: "git add "
+	remember to include the space after the word "add"
+git add -A
+	add all changes in all modified files and any new files to repo. Also remove any files that have been deleted.
+
+git delete [file/folder]
+	remove a file/folder from the local repository the same way you added it - just use the word "delete"
+
+MAKE A COMMIT:
+REMEMBER add all the files you have created or changed using "git add" before commiting.
+
+git commit -m "Add a fifty two foot high gingerbread house."
+Always commit with a detailed message in present tense. In your head, start the commit message with "This commit will..."
+This commit will... "Fix a terrible bug."
+This commit will... "Create 3 new style rules for headers."
+This commit will... "Remove some stupid junk."
+You don't want "Fixed" or "Created" you want to start with "Fix" "Create" "Remove" "Add"
+
+Now you can make changes again.
+Now let's say you want to add a feature. Something dangerous! Adventurous! Untested! But you already have people using your app. You have to make sure they're version without the feature is safe. Enter branches. 
+
+git checkout -b MyCrazyNewThing
+	Now you are on a branch that's just for you to experiment with. It's like a save point. We can always return to the current state by entering:
+git checkout master
+	The "-b" means "create the branch if it doesn't exist." Master is created automatically when you run git init, so no need for it here.
+
+Now that you are on your branch, continue to add and delete and commit as above. When your feature is ready to release, merge it back in with the current state. 
+
+git checkout master
+git merge MyCrazyNewThing 
+
+Lastly, send all your hard work to the remote repository so your buddies can all try it out and break it for you.
+
+git push origin master
+	origin = remote repository
+	you can see your available repositories with:
+git remote
+
+So, turns out your friends are cool and although they did break your program, they fixed it for you too.  Because they are so cool, you have allowed them to push their changes the same way as you just did. 
+
+To add their remote changes to your own changes:
+
+git pull origin master
+
+	* master = the branch to merge from that repository into the current branch on your local repository (on your computer) 
+
+you can push any time and all your local commits will each be saved in the remote repository. You can check any of them out any time. This means that when you hit bugs that make you want to throw yourself out of a window, you can revisit old versions of your code - back in the good old days when you were absolutely SURE that thing was working... Or when your boss changes their mind and says the design looked better 2 weeks ago... 
+
+We all do this. 
+
+So commit early, commit often. And be easy on your future self. Keep your commit messages thorough but as to-the-point as possible so that even in 3 years you know what the hell you were talking about. 
+
+Last of all, it's always good to know where you stand with git.
+
+git log
+	Show the current commit and branch that you have checked out, and the history of other commit messages before the current one. 
+	* git log --all will give you all commit messages: past and future.
+
+git status
+	Which files are about to be committed (staged for commit)? Which ones are about to be deleted? Which files does git not know about yet that need to be added? 
+
+git diff
+	What the hell is going on? What changed in all my files between now and the last commit?
+
+	Git is an incredibly useful tool so don't be scared of it! Learn more here:
+	http://git-scm.com/documentation
