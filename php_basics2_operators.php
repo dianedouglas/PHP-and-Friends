@@ -15,10 +15,15 @@ Arithmetic operators
 	$x / 6;
 	$x % 7;
 
-	Except that the increment / decrement symbols happen before the variable instead of after it in php.
+	Except that there are increment / decrement symbols in php
 	++$x;
 	--$x;
+	is the equivalent of x += 1 and x -= 1
 
+	You can also have 
+	$x++
+	$x-- 
+	These are only different if you are using the variable in a comparison $x++ == 0 will increment x after comparing it to 0. ++$x == 0 will compare after incrementing.
 
 Assignment operators
 
