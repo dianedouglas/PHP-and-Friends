@@ -48,65 +48,65 @@ VARIABLES
 	- Strings are the same as in Ruby, except there's a difference between double and single quotes.
 	$name = "Diane Douglas";
 
-	single quotes are a literal string. double quotes will try to evaluate any variables inside of the string.
+		single quotes are a literal string. double quotes will try to evaluate any variables inside of the string.
 
-	$count = 8;
-	$bulletin = "$count people have accepted your invitation";
-	echo $bulletin;
-	=> 8 people have accepted your invitation
+		$count = 8;
+		$bulletin = "$count people have accepted your invitation";
+		echo $bulletin;
+		=> 8 people have accepted your invitation
 
-	$bulletin = '$count people have accepted your invitation';
-	echo $bulletin;
-	=> $count people have accepted your invitation
-	allows you to not worry about escape characters.
+		$bulletin = '$count people have accepted your invitation';
+		echo $bulletin;
+		=> $count people have accepted your invitation
+		allows you to not worry about escape characters.
 
 	- Integers and floating-point numbers can be assigned in the same way. 
-	$age = 17;
-	$exact_age = 17.5;
+		$age = 17;
+		$exact_age = 17.5;
 
 	- Arrays are conceptually the same in php as in Ruby, but they are written differently. Here is an empty array in both languages.
-	Ruby:
-	my_empty_collection = Array.new()
-	PHP:
-	$my_empty_collection = array();
+		Ruby:
+		my_empty_collection = Array.new()
+		PHP:
+		$my_empty_collection = array();
 
-	To get the first item out of an array in either language we can use square brackets. Remember both count from 0:
-	my_collection[0]
-	$my_collection[0]
+		To get the first item out of an array in either language we can use square brackets. Remember both count from 0:
+		my_collection[0]
+		$my_collection[0]
 
 	- Multi-dimensional arrays. However, these are really just normal arrays nested inside of each other and we could do it in ruby too.
-	Let's set up spaces for a game of tic tac toe in both languages. 
+		Let's set up spaces for a game of tic tac toe in both languages. 
 
-	One row in Ruby would be:
-	> first_row = ['x', 'o', 'x']
+		One row in Ruby would be:
+		> first_row = ['x', 'o', 'x']
 
-	Now we need 3 of these:
-	> first_row = ['x', 'o', 'x']
-	> second_row = ['o', 'x', 'x']
-	> third_row = ['o', 'o', 'o']
+		Now we need 3 of these:
+		> first_row = ['x', 'o', 'x']
+		> second_row = ['o', 'x', 'x']
+		> third_row = ['o', 'o', 'o']
 
-	Now let's put them together and make an array of arrays! First here's a blank array:
-	> three_d = []
-	So inside of that we will put:
-	> three_d = [ first_row, second_row, third_row ]
-	If we type that into irb, we will get this in return:
-	=> [["x", "o", "x"], ["o", "x", "x"], ["o", "o", "o"]]
-	We can access the first row like this:
-	> three_d[0]
-	=> ["x", "o", "x"]
-	What if we only want the middle square of the first row? Well, remember all return values are objects, and the object returned by three_d[0] is an array.
-	So array commands should work on it too. 
-	> three_d[0][1]
-	That means, get me the second element of the first element of the array three_d. So we successfully get the string stored there:
-	=> "o"
+		Now let's put them together and make an array of arrays! First here's a blank array:
+		> three_d = []
+		So inside of that we will put:
+		> three_d = [ first_row, second_row, third_row ]
+		If we type that into irb, we will get this in return:
+		=> [["x", "o", "x"], ["o", "x", "x"], ["o", "o", "o"]]
+		We can access the first row like this:
+		> three_d[0]
+		=> ["x", "o", "x"]
+		What if we only want the middle square of the first row? Well, remember all return values are objects, and the object returned by three_d[0] is an array.
+		So array commands should work on it too. 
+		> three_d[0][1]
+		That means, get me the second element of the first element of the array three_d. So we successfully get the string stored there:
+		=> "o"
 
-	In php we would make arrays within arrays in a similar way. First let's make one row:
-	array('x', 'o', 'x')
-	Each element is separated by commas within parenthesis. So we can make an array of arrays the same way:
-	$php_three_d = array(array('x', 'o', 'x'), array('o', 'x', 'x'), array('o', 'o', 'o'));
-	And we can access the middle square of the first row in the same way:
-	$php_three_d[0][1];
-	Just don't forget the $ and the ;
+		In php we would make arrays within arrays in a similar way. First let's make one row:
+		array('x', 'o', 'x')
+		Each element is separated by commas within parenthesis. So we can make an array of arrays the same way:
+		$php_three_d = array(array('x', 'o', 'x'), array('o', 'x', 'x'), array('o', 'o', 'o'));
+		And we can access the middle square of the first row in the same way:
+		$php_three_d[0][1];
+		Just don't forget the $ and the ;
 
 	- Variables can be assigned to each other in the normal way 
 	$name = $other_name;
