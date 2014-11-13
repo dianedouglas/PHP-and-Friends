@@ -1,0 +1,1 @@
+This is a repository of notes for PHP teaching materials.
