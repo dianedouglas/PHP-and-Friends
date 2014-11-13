@@ -11,6 +11,8 @@ SETUP THE FILE
 
 	Everything outside of those tags is sent to your browser as HTML.
 
+	Test your basic code here!
+	http://writecodeonline.com/php/
 
 
 BASICS: COMMENTS, WHITESPACE, PRINTING
