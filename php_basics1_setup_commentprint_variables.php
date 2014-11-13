@@ -58,7 +58,23 @@ VARIABLES
 		$bulletin = '$count people have accepted your invitation';
 		echo $bulletin;
 		=> $count people have accepted your invitation
-		allows you to not worry about escape characters.
+		allows you to not worry about escape characters, except for the single quote and the backslash: \' \\
+
+		within a double quote if you need to escape anything use a backslash. \n \t \" \\ are standard ones you should know. 
+
+		you can use multiline strings by enclosing them in quotes, or what's called a heredoc symbol:
+
+$longvar = <<<_BOOKEND
+	blah blah blah
+		more stuff
+			test test test
+_BOOKEND;
+echo $longvar;
+
+		$longvar is set to equal the entire string within the _BOOKEND symbols, including whitespace. But remember that your html will 
+		reformat your whitespace anyway. 
+		the closing symbol must be at the beginning of the last line, by itself, followed by a semi colon. 
+		Could be named anything but convention is start with _ and use capitals. 
 
 	- Integers and floating-point numbers can be assigned in the same way. 
 		$age = 17;
