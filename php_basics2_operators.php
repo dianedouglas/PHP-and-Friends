@@ -46,7 +46,7 @@ Assignment operators
 	All of these mean "do the regular operation as if there were no equal sign there, then assign the result to the variable on the left."
 	For example, to calculate $x %= 7; We would figure out what $x modulo 7 is equal to, then we would assign that number to $x.
 
-	There's one more operator it's important to know about, and that is '.' It is the equivalent of the String#concat method in ruby.
+	There's one more operator it's important to know about, and that is '.' It is the equivalent of the String#concat method and the + operator in ruby.
 	$x = "Hello!  " . "How are you?";
 	It also has an equivalent assignment operator that let's you concat a string with itself, plus something else.
 	$x = "Hello!  ";

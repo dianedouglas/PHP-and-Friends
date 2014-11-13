@@ -48,6 +48,18 @@ VARIABLES
 	- Strings are the same as in Ruby, except there's a difference between double and single quotes.
 	$name = "Diane Douglas";
 
+	single quotes are a literal string. double quotes will try to evaluate any variables inside of the string.
+
+	$count = 8;
+	$bulletin = "$count people have accepted your invitation";
+	echo $bulletin;
+	=> 8 people have accepted your invitation
+
+	$bulletin = '$count people have accepted your invitation';
+	echo $bulletin;
+	=> $count people have accepted your invitation
+	allows you to not worry about escape characters.
+
 	- Integers and floating-point numbers can be assigned in the same way. 
 	$age = 17;
 	$exact_age = 17.5;
