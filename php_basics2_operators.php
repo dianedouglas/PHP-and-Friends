@@ -65,6 +65,7 @@ https://www.tinfoilsecurity.com/blog/ruby-demystified-and-vs
 	&& vs and
 	english operators have lower precidence than symbolic. 
 	symbolic && has higher precidence than symbolic ||
+	To force precidence with any operator use parenthesis.
 	english operators have equal precidence and are evaluated left to right.
 
 		and, &&: 
@@ -140,4 +141,20 @@ https://www.tinfoilsecurity.com/blog/ruby-demystified-and-vs
 													(walk_to_school())
 												end
 
+identity vs equality operators:
 
+	== is the equality operator 
+	it automatically converts the two things being compared based on context. 
+	if you have 2 strings composed of numbers, it will convert both to numbers before comparing.
+
+	if ("10" == "+10") echo "The number 10 is equal to the number 10.";
+
+	=== is the identity operator and it tells php not to auto convert the types.
+
+	if (!("10" === "+10")) echo "The string 10 is not equal to the string +10.";
+
+	above, I used the not operator to look for a false value from the expression inside of the inner parenthesis. 
+	could also be written as:
+
+	if ("10" !== "+10") echo "This is the same thing. 10 the string is not +10 the string.";
+	if ("10" != "+10") echo "This won't print anything because it is not true. both strings will convert to the number 10."

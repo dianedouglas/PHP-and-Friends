@@ -104,8 +104,24 @@ echo $longvar;
 	-Associative Arrays:
 
 		Essentially hashes. These arrays have named indexes instead of elements that are numbered from 0.
-		
+		Construct one with the array keyword: $my_variable = array();
+		But inside the parenthesis, the array looks exactly like a ruby hash. 
 
+		in Ruby:
+		ages = { "Diane" => 28, "Genevieve" => 0.4, "Mary Poppins" => "Fictional Character" }
+		in PHP:
+		$ages = array( "Diane" => 28, "Genevieve" => 0.4, "Mary Poppins" => "Fictional Character" );
+
+		It doesn't matter what type of variables you want to store in an associative array or a hash, but they are indexed by string.
+		Then you can fetch them using that string.
+
+		in Ruby:
+		> ages["Diane"]
+		=> 28
+
+		in PHP
+		echo $ages["Diane"];
+		=> 28
 
 	-constants
 		like regular variables but without the dollar sign, and you cannot alter its value once it has been set. 

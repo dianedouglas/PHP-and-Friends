@@ -16,3 +16,9 @@ time();
 to get 17 days ago, do:
 time() - (17 * 60 * 60 * 24);
 
+anything that returns a value is an expression. a literal type of expression is something that evaluates to itself - 73, "hello", $name, etc.
+a statement is where you combine assignment or control flow constructs with the expressions. tell the computer to do something. a command.
+
+associativity is the direction of processing for an operator:
+	-all math operators and string concat and logical operators are left to right, as well as arguments separated by comma.
+	-casting and assignment are right to left.
