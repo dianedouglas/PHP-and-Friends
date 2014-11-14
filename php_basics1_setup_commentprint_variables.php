@@ -136,6 +136,18 @@ echo $longvar;
 		must use the define function and no dollar sign.
 		good practice to name them with only uppercase letters.
 
+		there are also predefined constants. always named like this __THING__
+		useful for debugging:
+		__LINE__ = current line number
+		__FUNCTION__ = current function. also one for class, method and namespace (which is defined at compile time).
+		ex:
+		want to see if your program has skipped some code? place several copies of this line into your code to watch the flow of the program.2
+		echo "The program has reached " .__LINE__ . " of FILE " . __FILE__;
+
+		__FILE__ = absolute file path to the current file.
+		__DIR__ =  path to directory of current file.
+
+
 	- Variables can be assigned to each other in the normal way 
 	$name = $other_name;
 
