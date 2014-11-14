@@ -45,6 +45,9 @@ VARIABLES
 
 	Variable types:
 
+	-PHP is very loosely typed. You don't need to declare variables before using them, 
+	and php will automatically convert the variable type to the one you need based on context. 
+
 	- Strings are the same as in Ruby, except there's a difference between double and single quotes.
 	$name = "Diane Douglas";
 
@@ -123,6 +126,15 @@ echo $longvar;
 		And we can access the middle square of the first row in the same way:
 		$php_three_d[0][1];
 		Just don't forget the $ and the ;
+
+	-constants
+		like regular variables but without the dollar sign, and you cannot alter its value once it has been set. 
+		define("EINSTEIN_EQUATION", "e=mc**2");
+		now that is defined, you can retrieve it by name.
+		$equation_to_display = EINSTEIN_EQUATION;
+		good for storing file paths, or magic numbers like the speed of light.
+		must use the define function and no dollar sign.
+		good practice to name them with only uppercase letters.
 
 	- Variables can be assigned to each other in the normal way 
 	$name = $other_name;
