@@ -1,0 +1,30 @@
+<?php
+	function longdate($timestamp)
+	{
+		return date("l F jS Y", $timestamp);
+	}
+
+	function triple($number_to_multiply)
+	{
+		return 3 * $number_to_multiply;
+	}
+
+?>
+
+Just like defining a function in javascript at parse time.
+http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname
+
+function calls don't care if you have more arguments than needed. it will just use the needed ones from left to right and ignore extras. 
+there will be an error if there are not enough arguments for a function call.
+
+<?php
+
+// triple(); will cause an error.
+echo triple(4);
+echo triple(4, 5, 6, 7, 8);
+//both of the above will print the number 12. Extra numbers in second call will be ignored.
+
+?>
+
+you can input and output multiple values from functions. 
+
