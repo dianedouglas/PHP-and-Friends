@@ -30,6 +30,9 @@ BASICS: COMMENTS, WHITESPACE, PRINTING
 	Print to the browser with the command 'echo'
 	echo $name;
 
+	You can also use the print command. no parenthesis cause it's a construct like echo. 
+	only difference is you can use print inside of a more complex expression and it's a tiny bit slower than echo because it returns a value (1).
+	$b ? print "b is true" : print "b is false"
 
 VARIABLES
 
