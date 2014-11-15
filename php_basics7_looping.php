@@ -37,3 +37,25 @@ do ... while
 	} while (++$count <= 12);
 	?>
 
+for loop
+
+	<?php
+		for ($i=0; $i < 5; $i++) { 
+			# code...
+			echo $i . " is the current count. \n";
+		}
+	?>
+
+	just like other forloops, you have the initializeation, terminating condition and modification at the end of each iteration.
+	separate the for loop parameters with semicolons, but if you want to have multiple statements use commas
+
+	<?php
+		for ($i = 1, $j = 1; $i + $j < 10; $i++, $j++)
+		{
+			echo "i times j = " . $i * $j . "\n";
+		}
+	?>
+
+	for is used a lot.
+	while is usually more appropriate when your loop termination condition doesn't depend on a simple regular change to a variable. 
+	when you're waiting for a special input or error while is good.
