@@ -1,3 +1,4 @@
+3 kinds of loops.
 while
 
 	$fuel = 10;
