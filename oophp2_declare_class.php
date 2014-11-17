@@ -85,5 +85,22 @@ constructors / destructors:
 
 	}
 
+declaring methods in classes:
+	just like functions, but you can't use __ before the name - reserved.
+	you also have access to $this
+	
 
+static methods:
+	you can declare a method in a class as Static in php5, which means that it is called on the class not on the object (class methods)
+	these methods are good for tasks which don't affect one particular instance of an object.
+
+	User::prompt_for_password();
+
+	class User
+	{
+		static function prompt_for_password()
+		{
+			echo "Please enter your password";
+		} 
+	}
 
