@@ -13,8 +13,19 @@ VARIABLES
 	Variable types:
 
 	-PHP is very loosely typed. You don't need to declare variables before using them, 
-	and php will automatically convert the variable type to the one you need based on context. 
+	and php will automatically convert the variable type to the one you need based on context. called implicit casting. 
+	also explicit casting for hwen you want to bypass auto casting. ex: if you divide 2 ints you'll get a floating point by default for accuracy.
+	if you want an int, do this
+	$c = (int) ($a / $b);
+	in the above expression, put $a / $b in parenthesis so that not just $a gets converted. 
 
+	(int) (integer)
+	(bool) (boolean)
+	(float) (double) (real)
+	(string)
+	(array)
+	(object)
+	
 	- Strings are the same as in Ruby, except there's a difference between double and single quotes.
 	$name = "Diane Douglas";
 
