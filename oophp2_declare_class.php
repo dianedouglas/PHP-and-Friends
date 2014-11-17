@@ -88,11 +88,27 @@ constructors / destructors:
 declaring methods in classes:
 	just like functions, but you can't use __ before the name - reserved.
 	you also have access to $this
+
+declaring properties in classes:
+	you don't have to declare properties inside a class, but it is good practice to. easier to debug, and you can assign a default value.
 	
+	implicit definition of a property:
+		$object1 = new User();
+		$object1->name = "Alice";
+
+	class Test
+	{
+		public $name = "Alice";
+	}
+	much better ^^^
+	default values for properties MUST be constant - not function calls or expressions. 
+	public $thing = $level * 2; //is not allowed.
+	public $thing = time(); //is not allowed.
 
 static methods:
 	you can declare a method in a class as Static in php5, which means that it is called on the class not on the object (class methods)
-	these methods are good for tasks which don't affect one particular instance of an object.
+	these methods are good for tasks which don't affect one particular instance of an object. 
+	can't use $this within a static method because it is called on the class itself, not a particular object.
 
 	User::prompt_for_password();
 
