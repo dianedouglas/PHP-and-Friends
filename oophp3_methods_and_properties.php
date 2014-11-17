@@ -43,7 +43,7 @@ declaring properties in classes:
 	public $thing = $level * 2; //is not allowed.
 	public $thing = time(); //is not allowed.
 
-static methods:
+static methods and properties:
 	you can declare a method in a class as Static in php5, which means that it is called on the class not on the object (class methods)
 	these methods are good for tasks which don't affect one particular instance of an object. 
 	can't use $this within a static method because it is called on the class itself, not a particular object.
@@ -57,6 +57,15 @@ static methods:
 			echo "Please enter your password";
 		} 
 	}
+	a static method would be something that affects all instances of it, or a static property is affected by all instances.
+	ex:
+	a property which stores the number of instances of a class that have been created.
+	a method which checks this variable and outputs a result if it's greater than a threshold.
+	a method which calculates the total of a property from all instances of the object. 
+	object is a bank account, make a method which counts the money held in every account to output a total for cash on hand in the bank.
+
+	methods declared static are accessible with and without an instance of the class. 
+	static properties are only accessible within the class with self::$my_static_property or Classname::$my_static_property. not instances.
 
 declaring constants in classes:
 	class Translate
