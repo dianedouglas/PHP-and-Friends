@@ -24,3 +24,12 @@ associativity is the direction of processing for an operator:
 	-casting and assignment are right to left.
 
 wordpress is a php driven app. each section has its own main php file.
+
+PHP VERSIONS
+	don't always have the same built in functions. to make your code more portable check to see if a newer function exists before using it, 
+	and rewrite if necessary. 
+
+	if (!function_exists("array_combine"))
+	{
+		//rewrite function here.
+	}
