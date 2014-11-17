@@ -22,3 +22,5 @@ a statement is where you combine assignment or control flow constructs with the 
 associativity is the direction of processing for an operator:
 	-all math operators and string concat and logical operators are left to right, as well as arguments separated by comma.
 	-casting and assignment are right to left.
+
+wordpress is a php driven app. each section has its own main php file.
