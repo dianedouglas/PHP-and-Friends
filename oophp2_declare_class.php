@@ -52,3 +52,11 @@ keyword $this:
 they can go anywhere, before or after statements using them, but generally good practice is to 
 put class and function definitions towards the end of a file. 
 
+clone:
+	$object1 = new Classname();
+	$object2 = $object1;
+	both $object2 and $object1 now hold the memory address of the new instance of Classname. 
+	if I modify a property using either $object1 or $object2, I am modifying the property on the same object. 
+	if I actually want an entirely separate copy of an object to modify, I use the clone keyword.
+
+	$object2 = clone $object1;
