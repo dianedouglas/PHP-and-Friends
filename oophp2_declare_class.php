@@ -42,7 +42,7 @@ calling methods on a class and accessing public properties:
 
 keyword $this:
 	same as self in ruby. to get or set a property of the current object
-	$this->name = "Courtney Love";
+	$this->name = "Jimi Hendrix";
 	$this->name_copy = $this->name;
 
 	again, don't use $ when referring to an object's property even though it's defined that way!
@@ -60,3 +60,30 @@ clone:
 	if I actually want an entirely separate copy of an object to modify, I use the clone keyword.
 
 	$object2 = clone $object1;
+
+constructors / destructors:
+	objects that take arguments pass them to the constructor method. used to initialize properties.
+	name it __construct.
+	in the past it was named the same thing as the class.
+
+	class User
+	{
+		function __construct($arg1, $arg2){
+			//set things up.
+		}
+	}
+
+	class User
+	{
+		function User($arg1, $arg2){
+			//set things up.
+		}
+	}
+
+	also destructor methods that are executed when an object is destroyed.
+	function __destruct(){
+
+	}
+
+
+
