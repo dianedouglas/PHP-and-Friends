@@ -27,3 +27,5 @@ Terminology:
 	this is a huge advantage because if you later improve your audio player or add more cd's to your original jukebox, 
 	all its subclasses will automatically have those features too.
 
+	members:
+		a name for both the properties and methods contained within a class.

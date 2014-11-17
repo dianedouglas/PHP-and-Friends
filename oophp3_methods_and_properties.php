@@ -72,3 +72,30 @@ declaring constants in classes:
 
 	can't change a constant once it's been defined.
 	accessible to all instances of that class using self::NAMEOFCONSTANT
+
+scope of properties and methods:
+
+	3 keywords: public, protected and private.
+	to use these, just place the keyword right before the property name or, for methods, before the function keyword in the declaration.
+	public
+		methods are public by default, anyone can call them from anywhere in the code.
+		properties are public if they are declared with the 'public' or 'var' keywords, or implicitly declared.
+		they can be read or set from anywhere.
+		var is older, but still valid. might see it in other places.
+
+		use this when:
+		outside code SHOULD be able to access this member and extending classes SHOULD inherit it.
+
+	protected
+		these properties and methods can be used only by the object's class methods and those of any subclasses.
+		not from outside the class.
+
+		use this when:
+		outside code SHOULD NOT be able to access this member and extending classes SHOULD inherit it.
+
+	private
+		these properties and methods can be used only by methods within the same class. not subclasses.
+
+		use this when:
+		outside code SHOULD NOT be able to access this member and extending classes SHOULD NOT inherit it.
+
