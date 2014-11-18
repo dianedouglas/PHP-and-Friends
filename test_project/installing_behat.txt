@@ -1,0 +1,21 @@
+1. In project directory, create a file called "composer.json"
+2. Paste this text into it and save:
+{
+    "require": {
+        "behat/behat": "2.4.*@stable"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
+3. In terminal, run this command:
+curl http://getcomposer.org/installer | php
+
+4. then this one:
+php composer.phar install
+
+5. If you get this error:
+The ... file could not be downloaded (HTTP/1.1 502 Bad Gateway) 
+use this command instead:
+php composer.phar install --prefer-source
