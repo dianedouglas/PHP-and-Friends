@@ -19,3 +19,7 @@ php composer.phar install
 The ... file could not be downloaded (HTTP/1.1 502 Bad Gateway) 
 use this command instead:
 php composer.phar install --prefer-source
+
+6. run this command to start with behat:
+bin/behat --init
+
