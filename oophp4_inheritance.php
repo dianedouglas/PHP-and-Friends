@@ -10,7 +10,7 @@ class Person
 		$this->age = $age;
 	}
 	function say_name(){
-		echo "My name is " . $this->name . "\n";
+		echo "My name is " . $this->name . ". \n";
 	}
 	function say_age(){
 		echo "I am " . $this->age . " years old.\n";
@@ -25,7 +25,7 @@ class Teacher extends Person
 {
 	public $subject = "Math";
 	function teach(){
-		echo "I'm teaching " . $this->subject . ".";
+		echo "\n I'm teaching " . $this->subject . ".";
 	}
 }
 $prof = new Teacher("Jim Ross", 52);
@@ -38,7 +38,7 @@ class Student extends Person
 {
 	public $major = "English";
 	function learn(){
-		echo "I'm learning " . $this->major . ".";
+		echo "\n I'm learning " . $this->major . ".";
 	}
 }
 
@@ -51,3 +51,52 @@ $kid->learn();
 ?>
 
 Remember you can't have less arguments than the ones defined in your constructor.
+
+parent:
+	if you have a method in subclass with the same name as the superclass it will override the parent.
+	if you need to override this behavior you can use the parent operator.
+
+<?php
+
+	class Administrator extends Person
+	{
+		function say_name(){
+			echo "\n I am an administrator. You don't really need my name.";
+		}
+		function no_really_say_name(){
+			echo "\n Oh alright, if you really want to know... \n";
+			parent::say_name();
+		}
+	}
+
+	$admin = new Administrator("Hulk Hogan", 42);
+	$admin->say_name();
+	$admin->no_really_say_name();
+?>
+
+	if you want to ensure that you aren't accidentally calling a parent method, you can write 
+	self::method();
+
+subclass constructors:
+	
+	php will not automatically call the constructor method of a parent class.
+	if you want it to, then specify.
+
+	...
+		function __construct(){
+			parent::__construct(); //initialize all super class properties.
+			//setup the rest of the subclass afterwards here.
+			self::setup();
+		}
+	...
+
+	example: class called 'Wildcat' with suclass 'Tiger' init true/false classes for fur (all cats) and stripes (just tigers.)
+
+final:
+
+	to prevent a subclass from overriding a superclass method, use the keyword 'final'.
+	...
+		final function copyright(){
+			echo "This class was written by me.";
+		}
+	...
