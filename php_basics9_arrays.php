@@ -55,8 +55,8 @@ Array keyword:
 
 	<?php 
 
-		$array1 = array("Thing1", "Thing2", "Thing3");
-		$array2 = array("Thing1" => "To be or not to be...", "Thing2" => "Once upon a time...", "Thing3" => "I once knew a man from nantucket...");
+		$things = array("Thing1", "Thing2", "Thing3");
+		$phrases = array("Thing1" => "To be or not to be...", "Thing2" => "Once upon a time...", "Thing3" => "I once knew a man from nantucket...");
 	 ?>
 
 	 Ruby has a similar notation. 
@@ -70,4 +70,45 @@ Array keyword:
 	 phrases = Hash["Thing1" => "To be or not to be...", "Thing2" => "Once upon a time...", "Thing3" => "I once knew a man from nantucket..."]
 
 	 => assigns to an key, rather than = which assigns to a variable 
+
+loop through arrays with foreach:
+
+<?php 
+
+	$things = array("Thing1", "Thing2", "Thing3");
+	$phrases = array("Shakespeare" => "To be or not to be...", "Fairytales" => "Once upon a time...", "Limericks" => "I once knew a man from nantucket...");
+
+	foreach ($things as $thing) {
+		echo $thing . "\n";
+	}
+
+	foreach ($phrases as $key => $value) {
+		echo "$key: $value \n";
+	}
+
+?>
+
+foreach is a method that takes 2 or more arguments separated by the keywords 'as' and '=>'
+
+take each item in the array in the variable to the left of the 'as' keyword, 
+and place it in the variable after the 'as' keyword. 
+Then use it in the loop code between the curly brackets.
+
+if the array is associative, you can use the '=>' to define variables to place both the key and value into to be used by the code in the loop.
+
+note:
+
+probably don't need this, but you can also use the each function and the list function to do the same thing. 
+each() takes an array as an argument and returns an array with a key/value pair from the given array. 
+then it moves a builtin pointer to the next pair to return that the next time it is called.
+use this in a while loop with the list function, which maps an array to given variables.
+
+list($a, $b) = array("Christmas", "Dec 25");
+echo $a . "\n";
+echo $b . "\n";
+
+while(list($key, $value) = each($myarray)){
+	echo "$key: $value";
+}
+
 
