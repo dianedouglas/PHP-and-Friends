@@ -1,0 +1,11 @@
+Download the php archive file:
+https://phar.phpunit.de/phpunit.phar
+
+In terminal, change directory into your downloads folder so that you are in the same location as the downloaded file.
+
+cd ~/Downloads
+chmod +x phpunit.phar
+sudo mv phpunit.phar /usr/local/bin/phpunit
+phpunit --version
+
+this last command will give you the PHPUnit version if it was installed correctly.
