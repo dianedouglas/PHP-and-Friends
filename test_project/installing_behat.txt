@@ -23,3 +23,26 @@ php composer.phar install --prefer-source
 6. run this command to start with behat:
 bin/behat --init
 
+7. create a feature file for the feature you're trying to build. 
+ex: creating the ls command.
+features/ls.feature
+
+in this file, start with 4 lines. 
+name the feature
+benefit of the feature
+who is using it (the role)
+the feature itself.
+
+	Feature: ls
+		In order to see the directory structure
+		As a UNIX user
+		I need to be able to list the current directory's contents.
+
+then define a scenario, which is more specific.
+	description, given, when, then.
+
+	Scenario: List 2 files in a directory
+	  Given I am in a directory "test"
+	  And I have a file named "foo"
+	  When I run "ls"
+	  Then I should get: foo
