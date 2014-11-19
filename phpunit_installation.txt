@@ -9,3 +9,37 @@ sudo mv phpunit.phar /usr/local/bin/phpunit
 phpunit --version
 
 this last command will give you the PHPUnit version if it was installed correctly.
+
+
+
+
+
+
+
+good reference to different tools and terminology for testing.
+http://www.phptherightway.com/#test_driven_development
+
+PHPUnit is for Unit Testing, which ensures that your functions and classes all create the desired output from the desired input, 
+and that they correctly handle errors from input. Having good test coverage ensures that modifications to your code will not introduce 
+new bugs to existing code. 
+
+It also drives the development process if you define the desired input/output with tests that start simple before implementing the actual code. This is the heart of behavior driven development. 
+
+PHPUnit is the standard, but other frameworks are out there: atoum, Enhance PHP, PUnit, SimpleTest
+
+There is also another kind of testing which you will hear of. To quote "phptherightway.com":
+
+	Sometimes also known as acceptance testing, functional testing consists of using tools to create automated tests that actually use your application instead of just verifying that individual units of code are behaving correctly and that individual units can speak to each other correctly. These tools typically work using real data and simulating actual users of the application.
+
+Tools for this include Selenium (works with PHPUnit), Mink, Codeception (works with PHPUnit) and Storyplayer.
+
+Within Behavior Driven Development, there are two terms to be familiar with: SpecBDD and StoryBDD. 
+SpecBDD is more code focused, and you can use PHPSpec for this, but it is the same approach that we will use with PHPUnit. PHPSpec is like RSpec for Ruby.
+StoryBDD is more focussed on business requirements and can be written with human-readable scenarios. "As a user, I want to..." Behat is used for this and it is like Cucumber for Ruby.
+
+**notes for me:
+start with phpunit
+check out PHPSpec too.
+then move on to either codeception or selenium for functional testing.
+stay away from behat if possible.
+
