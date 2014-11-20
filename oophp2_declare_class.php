@@ -60,3 +60,7 @@ clone:
 	if I actually want an entirely separate copy of an object to modify, I use the clone keyword.
 
 	$object2 = clone $object1;
+
+rule of $:
+Use $ on all variables, inside and out of functions, BUT do not use the $ on any member of a class - property or function. 
+The -> means you don't need it.
