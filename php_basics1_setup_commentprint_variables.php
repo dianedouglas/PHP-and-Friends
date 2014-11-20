@@ -117,6 +117,7 @@ you should see something like this output:
 
 
 The 'Document root' is the folder on your local machine that is the equivalent of typing "http://localhost:8000/" into your browser. 
+This folder is set to wherever you are in the terminal when you run the command to start the server.
 If you do put that address into your browser it'll give you an error:
 
 Not Found: The requested resource / was not found on this server.
