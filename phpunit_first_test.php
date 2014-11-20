@@ -142,3 +142,8 @@ Now it is time for development.
 	OK (1 test, 1 assertion)
 
 	Yay!
+
+	reference: 
+	http://www.testically.org/2010/06/07/how-many-asserts-should-a-phpunit-test-case-have/
+	it's a good idea to have one assert per unit test because as soon as an assert in a test fails, it will not check subsequent asserts until the first one passes.
+	the exception to this is when you have several assert statements that all test details of a single task.
