@@ -9,7 +9,6 @@ class Each_Looper
 		$output_array = array();
 		foreach ($friends as $friend) {
 			$output_array[] = $friend . " is my friend";
-			print_r($output_array);
 		}
 		return $output_array;
 	}
