@@ -29,7 +29,17 @@ class Message_Printer
 		{
 			return "Welp.";
 		}
+	}
 
+	public function check_temperature($temp)
+	{
+		if($temp < 60 || $temp > 80)
+		{
+			return "Let's complain about weather!";
+		}
+		else{
+			return "It's balmy outside!";
+		}	
 	}
 }
 

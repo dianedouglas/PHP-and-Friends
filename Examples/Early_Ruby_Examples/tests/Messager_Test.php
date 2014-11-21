@@ -68,6 +68,49 @@ class Messager_Test extends PHPUnit_Framework_TestCase
 		//Assert	
 		$this->assertEquals("Welp.", $result);
 	}
+
+	//**********************************************************
+
+	public function test_check_temperature_balmy()
+	{
+		//Arrange
+		$test_message_printer = new Message_Printer;
+		$temp = 65;
+
+		//Act
+		$result = $test_message_printer->check_temperature($temp);
+
+		//Assert
+		$this->assertEquals("It's balmy outside!", $result);
+
+		//Arrange, Act Assert: Other conditions to meet for this test.		//Arrange: Let's check a  conditions to meet for this test.
+		$temp = 60;
+		$result = $test_message_printer->check_temperature($temp);
+		$this->assertEquals("It's balmy outside!", $result);
+		$temp = 80;
+		$result = $test_message_printer->check_temperature($temp);
+		$this->assertEquals("It's balmy outside!", $result);
+
+
+	}
+
+	public function test_check_temperature_notbalmy()
+	{
+		//Arrange
+		$test_message_printer = new Message_Printer;
+		$temp = 50;
+
+		//Act
+		$result = $test_message_printer->check_temperature($temp);
+
+		//Assert
+		$this->assertEquals("Let's complain about weather!", $result);
+
+		//Arrange, Act Assert: Other conditions to meet for this test.		//Arrange: Let's check a  conditions to meet for this test.
+		$temp = 95;
+		$result = $test_message_printer->check_temperature($temp);
+		$this->assertEquals("Let's complain about weather!", $result);
+	}
 }
 
 
