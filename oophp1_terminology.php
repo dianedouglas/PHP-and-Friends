@@ -29,3 +29,19 @@ Terminology:
 
 	members:
 		a name for both the properties and methods contained within a class.
+		class members do not need the $. When you declare a property, it does need a $ to tell PHP that it is a variable, but when you 
+		access it, don't use the $.
+
+	class MyClass
+	{
+		$myproperty = "default";
+		public function myfunction(){//...}
+	}
+
+		$this->myproperty;
+		or
+		$my_class_instance->myproperty;
+
+		$this->myfunction;
+		or
+		$my_class_instance->myfunction;
