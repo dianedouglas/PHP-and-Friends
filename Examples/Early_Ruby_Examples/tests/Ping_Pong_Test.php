@@ -53,7 +53,7 @@ class Ping_Pong_Test extends PHPUnit_Framework_TestCase
 		$result = $test_ping_pong->ping_ponger($final_number);
 
 		//Assert
-		$this->assertEquals(array(0, 1, 2, "ping", 4, "pong", "ping", 7, 8, "ping", "pong", 11, "ping", 14, "ping-pong"), $result);
+		$this->assertEquals(array(0, 1, 2, "ping", 4, "pong", "ping", 7, 8, "ping", "pong", 11, "ping", 13, 14, "ping-pong"), $result);
 	}
 }
 

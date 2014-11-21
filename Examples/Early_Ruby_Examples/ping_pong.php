@@ -9,6 +9,9 @@ class Ping_Pong
 			if($count == 0){
 				continue;
 			}
+			elseif ($count % 3 == 0 && $count % 5 == 0) {
+				$full_range[$count] = "ping-pong";
+			}
 			elseif($count % 3 == 0){
 				$full_range[$count] = "ping";
 			}
