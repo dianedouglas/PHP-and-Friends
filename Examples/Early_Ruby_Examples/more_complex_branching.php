@@ -4,18 +4,32 @@ class Message_Printer
 {
 	public function grade_messager($grade)
 	{
-		switch($grade)
+		// switch($grade)
+		// {
+		// 	case "A":
+		// 		return "Excellent work!";
+		// 		//no need for break because return stops it.
+		// 	case "B":
+		// 	case "C":
+		// 		return "Good work!";
+		// 	case "D":
+		// 	case "F":
+		// 		return "Welp.";
+		// }
+
+		if($grade == "A")
 		{
-			case "A":
-				return "Excellent work!";
-				//no need for break because return stops it.
-			case "B":
-			case "C":
-				return "Good work!";
-			case "D":
-			case "F":
-				return "Welp.";
+			return "Excellent work!";			
 		}
+		elseif($grade == "B" || $grade == "C")
+		{
+			return "Good work!";
+		}
+		else
+		{
+			return "Welp.";
+		}
+
 	}
 }
 
