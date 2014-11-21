@@ -7,6 +7,9 @@ class Leap_Year_Runner
 		if ($year % 4){
 			return false;
 		}
+		else {
+			return true;
+		}
 	}
 
 }
