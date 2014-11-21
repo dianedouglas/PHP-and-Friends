@@ -35,10 +35,23 @@ class Leap_Year_Test extends PHPUnit_Framework_TestCase
 
 
 		//Act
-		$result = $leap_year_object->leap_year(1600);
+		$result = $leap_year_object->leap_year(1000);
 
 		//Assert
 		$this->assertFalse($result);
+	}
+
+	public function test_true_if_divisible_by_400()
+	{
+		//Arrange
+		$leap_year_object = new Leap_Year_Runner;
+
+
+		//Act
+		$result = $leap_year_object->leap_year(1600);
+
+		//Assert
+		$this->assertTrue($result);
 	}
 }
 
