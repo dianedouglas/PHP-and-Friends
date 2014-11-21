@@ -27,3 +27,19 @@ no error message.
 		$alphabet_first_half = range('a', 'm');
 		not
 		$alphabet_first_half[] = range('a', 'm');
+
+-you have to name your test file with the word "Test" in it.. 
+
+	Classname_Test.php or ClassnameTest.php
+
+	otherwise it will say "No tests executed!"
+
+	also have to make sure to require_once the file name which includes the class(es) you are testing.
+
+-because class names and function names are case insensitive. this is very important because: 
+	you can't have a class and a member function of that class named the same thing, or even the same thing with different capitalization.
+	when you try to call the function it will give you this error:
+
+	Missing argument 1 for Leap_Year::leap_year(), called in ...
+
+	incidentally, you can put constants into your function arguments in tests just like variables. this was not the problem. 
