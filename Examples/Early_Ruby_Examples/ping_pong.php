@@ -1,8 +1,8 @@
 <?php 
 
-class Ping_Pong
+class Ping_Ponger
 {
-	public function ping_ponger($final_number)
+	public function ping_pong($final_number)
 	{
 		$full_range = range(0, $final_number);
 		foreach ($full_range as $count) {
