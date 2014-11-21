@@ -19,3 +19,11 @@ mistake journal
 -can't make 2 functions with the same name in your tests.
 
 -forgot the semicolon at the end of a line.
+
+-when you are creating an array using the range function, 
+don't use the blank array notation, otherwise you will store the entire array in the first index of another array.
+no error message.
+
+		$alphabet_first_half = range('a', 'm');
+		not
+		$alphabet_first_half[] = range('a', 'm');

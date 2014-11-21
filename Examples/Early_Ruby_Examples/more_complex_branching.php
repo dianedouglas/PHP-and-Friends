@@ -41,6 +41,18 @@ class Message_Printer
 			return "It's balmy outside!";
 		}	
 	}
+
+	public function alphabetical_name($name)
+	{
+		$alphabet_first_half = range('a', 'm');
+		$name[0] = strtolower($name[0]);
+		if (in_array($name[0], $alphabet_first_half)) {
+			return "You're in the first half of the alphabet!";
+		}
+		else {
+			return "You're in the second half of the alphabet!";
+		}
+	}
 }
 
  ?>
