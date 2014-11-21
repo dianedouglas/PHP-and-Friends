@@ -31,8 +31,13 @@ Declaring:
 	Just like defining a function in javascript at parse time.
 	http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname
 
-	function name must start with a a letter or underscore followed by any number of letters, numbers or underscores.
-	function names are NOT CASE SENSITIVE. PRINT == pRiNt
+	CAPITALIZATION and naming conventions:
+		function name must start with a a letter or underscore followed by any number of letters, numbers or underscores.
+		function names are NOT CASE SENSITIVE. PRINT == pRiNt
+		NEITHER ARE CLASSNAMES.
+		Watch out for this because you can't have a function named the same thing as its class. 
+		Otherwise when you instantiate the class it will think it's the function and complain that you're missing an argument if your function needs one.
+		Variables are case sensitive. 
 
 	you can use one or more return statements in a function.
 	return a value and force the function to stop running and return to the point in the code where it was called.
