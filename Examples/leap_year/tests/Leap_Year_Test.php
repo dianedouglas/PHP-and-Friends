@@ -27,6 +27,19 @@ class Leap_Year_Test extends PHPUnit_Framework_TestCase
 		//Assert
 		$this->assertTrue($result);
 	}
+
+	public function test_false_if_divisible_by_100()
+	{
+		//Arrange
+		$leap_year_object = new Leap_Year_Runner;
+
+
+		//Act
+		$result = $leap_year_object->leap_year(1600);
+
+		//Assert
+		$this->assertFalse($result);
+	}
 }
 
 
