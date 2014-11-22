@@ -5,7 +5,7 @@ require_once "queen_attack.php";
 class Queen_Test extends PHPUnit_Framework_TestCase
 {
 	
-	function test_functionName()
+	function test_queen_can_attack_horizontal()
 	{
 		//Arrange
 		$test_queen = new Queen;
