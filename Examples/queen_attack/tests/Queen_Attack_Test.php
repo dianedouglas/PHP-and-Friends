@@ -18,6 +18,20 @@ class Queen_Test extends PHPUnit_Framework_TestCase
 		//Assert
 		$this->assertEquals(true, $result);
 	}
+	
+	function test_queen_can_attack_vert()
+	{
+		//Arrange
+		$test_queen = new Queen;
+		$queen_xy = array(1, 1);
+		$attack_xy = array(1, 4);
+
+		//Act
+		$result = $test_queen->queen_can_attack($queen_xy, $attack_xy);
+
+		//Assert
+		$this->assertEquals(true, $result);
+	}
 }
 
  ?>
