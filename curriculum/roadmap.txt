@@ -1,0 +1,14 @@
+php basics - get them printing things into the browser, using variables, looping, writing methods.
+php oo - the idea of a class
+php bdd - writing a class the right way with tests.
+
+database basics - sql queries inside of php
+php orm - active record for php or drupal?
+
+5 weeks of javascript
+5 weeks of drupal.
+
+php basics will go in the preclass work after html and css instead of js primitives etc.
+add programming tips after required reading.
+
+behat? 

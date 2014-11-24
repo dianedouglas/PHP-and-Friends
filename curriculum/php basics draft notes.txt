@@ -1,0 +1,57 @@
+$mystring = "foo";
+
+
+let's learn php! here's what you'll need to know to be able to write programs.
+
+first, we need to learn about the basic types of information. these are called primitives. they are:
+
+strings: these are like words, or sentances, and can be characters, numbers, and symbols. they are always surrounded by quotes. for example, "i am 8 years old!" is a string.
+
+numbers: there are two types of numbers in PHP: integers and floats. integers are like `8` or `574389547389`. floats are like `3.1415926` or `7.5`.
+
+booleans: these represent if something is true or false. they just look like `true` or `false`.
+
+null: this represents nothingness. very zen.
+
+
+
+you'd be amazed: with just these five primitives (integers and floats are counted separately), you have all the types of information you need to write really complex programs!
+
+
+another important basic concept in php is keywords. these are special words that tell the language something to do. the first keyword you should know about is `echo`...
+
+we'll see more keywords as we go.
+
+
+data on its own isn't very useful. we need to be able to do things with that data. the way we do things is with functions. for example, there's a function that tells you how long a string is:
+
+strlen("i love chocolate")
+> 14
+
+there's another function that tells you if a number is odd:
+
+isOdd(6)
+> false
+
+notice that functions return other primitives. strlen returns an integer. isOdd retuns a boolean. 
+
+
+most of programming isn't just using built-in php functions: it's creating your own. let's create our first function together here:
+
+function gimmeFive() {
+	return 5;
+}
+
+here's all the parts of a function: ...
+
+
+introduce variables here!!! - show a name multiple times on a page.
+
+
+sometimes we need collections of things. for example, maybe we need a list of unlucky numbers. to do this, we will use a function called array, that creates a collection of things:
+
+$unluckyNumbers = array(13, 4, 7);
+
+this creates an array of the unlucky numbers.
+
+show looping.

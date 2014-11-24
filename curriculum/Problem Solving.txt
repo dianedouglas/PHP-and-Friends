@@ -1,0 +1,11 @@
+Learning to be a problem solver
+
+-techniques for staying calm and finding the answer without getting frustrated.
+-keep an anlogue notebook nearby.
+-learn from your mistakes with a journal
+-learn your fucking keyboard commands. you'll thank yourself when you don't have to stop your brain to fix some text.
+-take the extra time to learn why. don't copy and paste code. when you find something strange, don't shy away from it dig in. this is an opportunity.
+-type things. it's like learning an instrument.
+
+* Another thing to do when you get stuck on your own is to pretend that you have to let your partner take their turn for 15 min. Take your hands off the keyboard and only allow yourself to read your code, read your google results, and just think about your problem. When you are alone there is a lot of temptation to fiddle with things, try them over and over, and then get lost. Sometimes the answer will come when you take a breath, be calm, and let your brain do its work without worrying about what your fingers are doing.
+* write out the steps you have tried to fix a problem, what you hope to learn from your experiments and what you have learned. what are the possible answers? 
