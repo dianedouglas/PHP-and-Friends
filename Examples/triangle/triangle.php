@@ -16,6 +16,10 @@ class Triangle
 		{
 			return "Isosceles triangle.";
 		}
+		else
+		{
+			return "Scalene triangle.";
+		}
 	}	
 }
 
