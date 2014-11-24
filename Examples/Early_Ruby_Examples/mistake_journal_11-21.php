@@ -51,4 +51,6 @@ no error message.
 - Invalid argument supplied for foreach()
 was using a string instead of an array as the first argument for foreach().
 
-- Constants must be defined outside of functions if they are within classes. use the const word. 
+- Constants must be defined outside of functions if they are within classes. use the const word, not define. needs more research.
+
+- remember you can't have 2 functions with the same name in your tests. 

@@ -7,10 +7,14 @@ class TitleCase
 	{
 		$small_words = array("And", "Or", "The", "A", "An", "But");
 
-		// $title = strtolower($title);
 		$capitalized_title = explode(" ", ucwords(strtolower($title)));
 		foreach ($capitalized_title as $key => $word) {
-			if(in_array($word, $small_words)){
+			if($key == 0)
+			{
+				continue;
+			}
+			if(in_array($word, $small_words))
+			{
 				$capitalized_title[$key] = strtolower($word);
 			}
 		}
