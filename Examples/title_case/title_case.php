@@ -2,17 +2,19 @@
 
 class TitleCase
 {
+
 	public function make_title_case($title)
 	{
-		// $title_in_array = explode(" ", $title);
-		// $i = 0;
-		// foreach ($title_in_array as $word) {
-		// 	$word[0] = strtoupper($word[0]);
-		// 	$title_in_array[$i] = $word;
-		// }
-		// return implode(" ", $title_in_array);
+		$small_words = array("And", "Or", "The", "A", "An", "But");
+
 		$title = strtolower($title);
-		return ucwords($title);
+		$capitalized_title = explode(" ", ucwords($title));
+		foreach ($capitalized_title as $key => $word) {
+			if(in_array($word, $small_words)){
+				$capitalized_title[$key] = strtolower($word);
+			}
+		}
+		return implode(" ", $capitalized_title);
 	}
 }
  ?>

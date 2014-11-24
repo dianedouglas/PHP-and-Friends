@@ -43,3 +43,12 @@ no error message.
 	Missing argument 1 for Leap_Year::leap_year(), called in ...
 
 	incidentally, you can put constants into your function arguments in tests just like variables. this was not the problem. 
+
+
+
+11-24
+
+- Invalid argument supplied for foreach()
+was using a string instead of an array as the first argument for foreach().
+
+- Constants must be defined outside of functions if they are within classes. use the const word. 
