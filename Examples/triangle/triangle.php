@@ -12,6 +12,10 @@ class Triangle
 		{
 			return "Equilateral triangle.";
 		}
+		elseif($side1 == $side2 || $side2 == $side3)
+		{
+			return "Isosceles triangle.";
+		}
 	}	
 }
 
