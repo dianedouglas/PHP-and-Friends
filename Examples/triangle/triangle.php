@@ -8,6 +8,10 @@ class Triangle
 		{
 			return "Not a triangle.";
 		}
+		elseif($side1 == $side2 && $side2 == $side3)
+		{
+			return "Equilateral triangle.";
+		}
 	}	
 }
 

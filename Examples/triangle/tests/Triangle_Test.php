@@ -19,6 +19,21 @@ class Triangle_Test extends PHPUnit_Framework_TestCase
 		//Assert
 		$this->assertEquals("Not a triangle.", $result);
 	}
+	
+	function test_triangle_type_equal_triangle()
+	{
+		//Arrange
+		$test_triangle = new Triangle;
+		$side1 = 3;
+		$side2 = 3;
+		$side3 = 3;
+
+		//Act
+		$result = $test_triangle->triangle_type($side1, $side2, $side3);
+
+		//Assert
+		$this->assertEquals("Equilateral triangle.", $result);
+	}
 }
 
  ?>
