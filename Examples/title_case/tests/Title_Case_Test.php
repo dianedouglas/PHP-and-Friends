@@ -43,6 +43,19 @@ class TitleCase_Test extends PHPUnit_Framework_TestCase
 		//Assert
 		$this->assertEquals("Word Up.", $result);
 	}
+	
+	function test_make_title_case_special_words()
+	{
+		//Arrange
+		$test_classname = new TitleCase;
+		$input_variable = "my friends and i";
+
+		//Act
+		$result = $test_classname->make_title_case($input_variable);
+
+		//Assert
+		$this->assertEquals("My Friends and I", $result);
+	}
 }
 
  ?>
