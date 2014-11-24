@@ -11,6 +11,7 @@ class TitleCase
 		// 	$title_in_array[$i] = $word;
 		// }
 		// return implode(" ", $title_in_array);
+		$title = strtolower($title);
 		return ucwords($title);
 	}
 }
