@@ -1,11 +1,79 @@
-Learning to be a problem solver
+Learning to be a problem solver by eating your metaphorical spinach.
+
+-what would a not-lazy person do?
+-take the extra time to learn why. don't copy and paste code. when you find something strange, don't shy away from it dig in. this is an opportunity.
 
 -techniques for staying calm and finding the answer without getting frustrated.
+
 -keep an anlogue notebook nearby.
 -learn from your mistakes with a journal
 -learn your fucking keyboard commands. you'll thank yourself when you don't have to stop your brain to fix some text.
--take the extra time to learn why. don't copy and paste code. when you find something strange, don't shy away from it dig in. this is an opportunity.
+
 -type things. it's like learning an instrument.
 
 * Another thing to do when you get stuck on your own is to pretend that you have to let your partner take their turn for 15 min. Take your hands off the keyboard and only allow yourself to read your code, read your google results, and just think about your problem. When you are alone there is a lot of temptation to fiddle with things, try them over and over, and then get lost. Sometimes the answer will come when you take a breath, be calm, and let your brain do its work without worrying about what your fingers are doing.
 * write out the steps you have tried to fix a problem, what you hope to learn from your experiments and what you have learned. what are the possible answers? 
+
+
+
+
+********************************
+
+
+Your time at Epicodus is going to teach you useful languages and tools that employers are looking for, but almost more importantly than that it is going to teach you how to be a problem solver. You're going to learn how to teach yourself what you need to know to create new things and come up with solutions to problems. Companies want to hire people who are able to learn quickly and don't shy away from figuring out a problem.
+
+But you have to do your part, and you have to hold yourself accountable. If you get a gym membership, but you only lift tiny weights and sit in the hot tub, don't be surprised if you don't lose weight. 
+
+You are taking this class to better yourself, so follow these guidelines even if they seem tedious at times because that is how you are going to get the most out of this. If you decide early on that you are going to try your best and not be lazy, then you will master this material and you'll be impressed by how much you have gained.
+
+1. Mistake Journal
+
+Mistakes are your friends, they are how you will learn. Even Alfred from Batman aggrees:
+
+https://www.youtube.com/watch?v=LstIgtkEe50
+
+Your Mistake Journal is going to be a set of files, one for every week of class. You don't have to show anyone (except us teachers), but every time you fix a mistake write it down. EVERY. TIME. The more the better. This is one of those places where it pays to not be lazy. Write down what the problem was (including any error messages), what steps you took to fix it, and what eventually worked. This has two benefits:
+	
+	* Stop making the same simple errors over and over:
+
+		You might be tempted to say "Oh I just forgot a semicolon. It wasn't an important error, I'm not going to bother writing it down."  But, by the third time you write down a note about semicolons, you're brain is going to say "Hey, I keep doing this and I'm sick of writing it down. I am going to put in the effort to correct this pattern." Then you will see less semicolon errors.
+
+	* Remember how to fix difficult, obscure bugs in the future:
+
+		You will occasionally come up against difficult problems. This is not said to worry or scare you, it is part of life. These problems will seem inexplicable and the error messages will be mysterious and unhelpful, but you will fix them eventually. The temptation after you fix something really cryptic is to move on with your life and be grateful that it's fixed. But then you will hate yourself when months or years later you come accross the same error and have to do all that work over again. Wouldn't it be great if you could just say to yourself, "Hey, I've seen this problem before! I'll just look up what I did to fix it last time." Now you've saved yourself more time for the fun parts of programming!  
+
+2. Keep calm and carry on.
+
+As said above, you will occasionally face difficult time consuming problems.  But more than any specific techniques for avoiding these situations, here are some tips for how to handle them on your own.
+
+	Quietly understand that you WILL get it eventually. If there is a solution to the problem, then there's no reason you can't find it. It takes patience and a clear head though. If you get angry, if you get angry you might miss a solution that's right under your nose.
+
+	Break down the problem into the simplest possible parts. Try to do them one at a time, in a vaccuum so you can clearly understand what isn't working. 
+
+	If you don't know what part of your code is causing the error, back your files up and then try deleting things until you narrow it down. You can always put them back later. Don't be afraid to tear your program apart to figure it out - it won't be mad ;) 
+
+	Fix your problems through experimentation. If you can't see the answer from staring at your code, try changing things about it to see how it reacts. For example, say that your program gives you an error whenever you type in a specific sentence. Instead of wondering what's wrong with that sentence, try typing in one word and see if you get the same result. Write down every experiment in your mistake journal, along with what you expect to learn from it. For our example: "If I type one word in and I don't get an error, then I know that my problem has to do with multiple words. If I get the same error, then I know that is not the cause."
+
+3. Don't be afraid to dig.
+
+Don't tip-toe through this material. Know that you are strong, and you are doing this for you. If you encounter something that you don't fully understand, or feel like you aren't good at it, don't try to avoid it.  Practice it. Google it. Ask your teachers and friends about it. Read a book about it. Post on message boards about it. Work on it until it clicks. Otherwise it will continue to be 'that thing I don't like' and you will lack confidance. 
+
+4. Practice typing.
+
+Learning to code is like learning a musical instrument. You could know all the music theory in the world, but if you never sit down and actually practice scales and songs then you will never be as good as you want to be. So do these two things: 
+
+	* Type the code examples from this site without copying and pasting. 
+	If you actually type every word then the information will sink in better and you will notice more patterns. Ideally, the only time you should copy and paste code is when you are at the point where you say "I've typed this a million times, I know exactly what it means and I don't need to retype it." 
+
+	* Learn your keyboard shortcuts.
+	This may seem trivial and tedious, but learning your way around your tools is important, so just do it. You never see a chef struggle to hold a knife. They have pracitced chopping vegetables so that they can spend their time on other tasks. 
+
+	Instead of a knife, our tool to master in class will be Sublime Text 2. This is a standard text editor used by many, many developers in many languages. So spend a few minutes a day here:  https://www.shortcutfoo.com/  Make an account and follow the Sublime Text training. And when you are coding, make yourself use the shortcuts you've learned. It will actually seem slower at first as you get used to them, but if you just try to get into the habit of using a new one every day or two, then before you know it you will look like a wizard when you type.
+
+5. When you have to memorize something, get it over with. 
+
+	This class does not involve very much memorization, but there are somethings that if you memorize them will make your life a lot easier. You will sometimes be directed to decks of online flashcards that we provide for this purpose. 
+
+	You should also keep a regular old analog paper notebook with you. This is the opposite of a mistake journal. This notebook is for when something clicks. A concept suddenly snaps into focus. There is a list of exactly 4 things you need to remember every time you do x, y and z. Take a minute to write it down, with pen and paper, and it will stick in your brain. 
+
+So, the moral of the story is, eat your spinach. Take the time. Don't give into the temptation to cut corners, because you will only be selling your future self short.
