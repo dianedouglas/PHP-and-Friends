@@ -1,0 +1,109 @@
+PHP is a versatile language that you can use right alongside your HTML. To tell your browser that you're going to be using PHP, we do 2 things: 
+
+1. name our files with the `.php` extension instead of `.html`
+2. Use these symbols as opening and closing tags for our php code (just like any other html tag like h1, or p):
+
+```
+<?php     
+	//code here    	
+?>
+```
+
+Your code goes between the `<?php` and the `?>` on one or more lines  These tags can be used anywhere in your html document, as many times as you like. Anything outside of that will be interpereted as html. 
+
+Let's see how this works with our browser right away! Recent Macs come with php installed already. To use it, you have to start up the built-in server (we'll learn more about what this is later, but basically it is needed for the browser to understand the php language). In your _Applications_ folder, go into your _Utilities_ folder and launch the _Terminal_ applciation. Now type this line of code in and press enter to change directory to your Desktop.
+
+```
+cd ~/Desktop
+```
+
+Now start the server by typing this command and hitting enter:
+
+```
+php -S localhost:8000
+
+```
+
+you should see something like this output:
+
+```
+PHP 5.6.3 Development Server started at Wed Nov 19 10:31:09 2014
+Listening on http://localhost:8000
+Document root is /Users/epicodus
+Press Ctrl-C to quit.
+```
+Note: If the above command gave you errors, or you would like to install a more recent version of php, or if you are a windows user, [here are the installation instructions I recommend.](http://www.linkto_phpinstall.com). 
+
+The terminal output tells you where to find the **document root** folder on your machine.  As long as the server is running, that folder is the equivalent of typing "http://localhost:8000/" into your browser. Since we have changed directory over to the Desktop in the terminal window before starting the server, the Desktop is our document root.  
+
+Now open your text editor and create a new file called `helloworld.php`, type this into it and save it to the Desktop:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello PHP!</title>
+</head>
+<body>
+	<h1>
+		<?php echo "Hello world!"; ?>
+	</h1>
+</body>
+</html>
+```
+
+Now open your browser and type in the following address: `http://localhost:8000/helloworld.php`
+
+Your browser now says "Hello world!" using PHP! Congrats, time to put it on the resume!
+
+But why wouldn't we just write "Hello world!" directly into our html? Because we might want that content to change! PHP is a scripting language and it allows us to create _dynamic websites_, which is a fancy term for websites that are created in real time and may change based on things like the user's choices or location. Let's make it do some work for us that html can't do. 
+
+Create a file `called hellomath.php` and save it to the Desktop. Type this into it, and save it: 
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello PHP!</title>
+  </head>
+  <body>
+    <h1>My first PHP page</h1>
+    <h3>I'm going to use PHP to do some math in your browser so that I don't have to calculate it myself! </h3>
+    <h2>200 x 245 + 999 = <?php echo 300 * 245 + 999; ?></h2>
+  </body>
+</html>
+```
+Now open it in your browser with this address: `http://localhost:8000/hellomath.php`. Now you'll see the product of that calculation, right on our webpage. Let's learn how this works:
+
+There are 4 basic types of information used inside of php. These are called primatives, and they are the basic building blocks of the language. First, we have two kinds of numbers - `integer`s, which are whole numbers like we used in the last example, and `float`s, which are numbers with a decimal point. Then we have `string`s, which are any kind of letters or sentences enclosed in quotes. The last kind is called a `boolean`. It has two states: `true` or `false`, just like a coin is either heads or tails.
+
+```
+Integers: 1, 2, -33, 19875
+Floats: 2.4, -9.99, 19.0, 3.14159ß
+Strings: "Once upon a time...", "Douglas Adams", "145", "#@%$@!!!!"
+Booleans: `true`, `false` (only two possible values)
+```
+
+Let's disect the rest of our php code and learn a couple rules about it. In our hello world page, we had this line: `echo "Hello world!"; `
+
+First we had to use a special word called `echo`. It tells the browser to print whatever comes after that word on the line, up until the semicolon at the end, which signals the end of the line. Special words like `echo` that are built into a computer language are called **keywords**.
+Then you can see by the double quotes that we have the `string` "Hello world!". This is the message to print and anything you put in the quotes here will be shown on your browser. Lastly, we have the semicolon. In php, every command must end with a semicolon. 
+
+Our next page has this line of php in it: `<?php echo 300 * 245 + 999; ?>`
+
+This is just doing some math for us using integers. The `*` symbol means multiply, and the `+` symbol means add. These arithmetic symbols are examples of `operators`. If `Integers`, `Floats`, `Strings` and `Booleans` are building blocks, `operators` would be different ways to move them around and stack them. 
+
+We do still need to use the word `echo` at the beginning of the line because without it, the browser would have just made the calculation, nodded its head in satisfaction that the task was done, and then promptly forgotten about it and displayed whatever html was around it. And again, the semicolon at the end of the math marks the end of the command.
+
+OK it's your turn! 
+
+Create a simple webpage to use php to display 3 math calculations using these arithmetic operators, as well as both integers and floats:
+
+* multiply: * 
+* divide: /
+* add: +
+* subtract: - 
+
+Now, within your php code, print out a message at the end of your math, in a separate paragraph, using the `echo` keyword with a `string`.
+
+

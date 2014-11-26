@@ -1,7 +1,0 @@
-PHP is a versatile language that you can use right alongside your HTML. To tell your browser that you're going to be using PHP, we use these symbols:
-
-	<?php         	?>
-
-And between the question marks is where you put your code. 
-
-There are four basic types of information used inside of php. These are called primatives, and they are the basic building blocks of the language, similarly to nouns, adjectives, verbs and adverbs in the english language.  
