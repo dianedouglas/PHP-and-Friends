@@ -169,4 +169,5 @@ echo $longvar;
 		$descriptive_names
 		$lower_case_letters
 		$underscores_not_spaces
-		
+
+	http://programmers.stackexchange.com/questions/149303/naming-classes-methods-functions-and-variables
