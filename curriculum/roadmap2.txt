@@ -1,0 +1,16 @@
+explained basic file setup for browser, printing strings and math in browser.
+echo keyword
+primitive data types
+operators for arithmetic 
+
+primitives can be stored in --> variables.
+
+operators --> functions. functions have arguments (which are variables)
+
+writing your own functions.
+
+branching/looping
+
+*****
+
+writing functions within classes.

@@ -1,0 +1,28 @@
+So now you know how to print things to the browser, and how to use PHP as a calculator. Hooray! It gets a lot cooler than that, but first, you need to learn what a **variable** is.  Variables let us store things like words and numbers so that we can display them later, or do things to them with operators, without knowing exactly what they are. 
+
+Think of a variable like your lunchbox, and say that you have labelled it with your name so that no one at work steals it. You know that the lunchbox contains some kind of food, but one day you might put a sandwich in it, and another day you might put leftover spaghetti in it. 
+
+Like lunchbox with a label which holds food, a variable holds information and it has a name.  Let's look at some examples:
+
+```
+<?php
+
+$breakfast = "bagel"; //Assigns the string "bagel" to the variable $breakfast
+$jamesbond = "Sean Connery"; //Assigns the string "Sean Connery" to the variable $jamesbond
+$jamesbond = "Roger Moore"; //Changes tha value of the variable $jamesbond to "Roger Moore" instead of "Sean Connery"
+
+?>
+
+In the first line, just like the lunch box, we decide that the variable $breakfast will be equal to "bagel". Similarly, the second line assigns the actor's name "Sean Connery" to the variable $jamesbond. However, haven't there been many james bonds? Luckily, variables can change their value, so in the next line we assign "Roger Moore" to the variable $jamesbond instead. 
+
+When a variable is holding a number instead of a string, they can be used with arithmatic operators in the same way as numbers. Let's look at an example:
+
+<?php
+
+$seans_favorite_number = 7;
+$rogers_favorite_number = $seans_favorite_number * 2;
+$my_favorite_number = $seans_favorite_number + $rogers_favorite_number;
+
+?>
+
+First, we say that the variable $seans_favorite_number is equal to 7. Then we say that $rogers_favorite_number is double whatever $seans_favorite_number equals, and that $my_favorite_number is the sum of the other two numbers. We could have just written 7 in ourselves instead of using the variable name $seans_favorite_number. But then what if later, Sean decides that his favorite number is 19? I'd have to remember to change it in three different places. By using a variable to store his favorite number, I need only change the first line to say `$seans_favorite_number = 19;` and be done with it.

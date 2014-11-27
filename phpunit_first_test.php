@@ -1,6 +1,6 @@
 SETUP
 
-1. 	Create your project directory in your 'Directory Root' (usually your home directory)
+1. 	Create your project directory in your 'Directory Root' 
 	For right now, create the folder Hello_Testing.
 
 2. 	Inside this folder, create a folder called 'src' to hold your program's classes, and another one called 'tests' to hold your test classes. 

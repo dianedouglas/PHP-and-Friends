@@ -163,3 +163,10 @@ echo $longvar;
 		* must only contain a-z, A-Z, 0-9 and _ (this is the only rule that is a little different than in Ruby, which is a little more forgiving about special characters.)
 		* separate words are separated by underscore and cannot contain spaces.
 		* variable names are case sensitive. 
+
+	- Variable naming conventions:
+
+		$descriptive_names
+		$lower_case_letters
+		$underscores_not_spaces
+		
