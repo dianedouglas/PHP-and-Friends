@@ -1,21 +1,27 @@
-So now you know how to print things to the browser, and how to use PHP as a calculator. Hooray! It gets a lot cooler than that, but first, you need to learn what a **variable** is.  Variables let us store things like words and numbers so that we can display them later, or do things to them with operators, without knowing exactly what they are. 
+So now you know how to print things to the browser, and how to use PHP as a calculator. Hooray! It gets a lot cooler than that, but first, you need to learn what a **variable** is.  
 
-Think of a variable like your lunchbox, and say that you have labelled it with your name so that no one at work steals it. You know that the lunchbox contains some kind of food, but one day you might put a sandwich in it, and another day you might put leftover spaghetti in it. 
+Variables let us store things like words and numbers so that we can display them later or use them with operators without knowing their value before hand.
 
-Like lunchbox with a label which holds food, a variable holds information and it has a name.  Let's look at some examples:
+Think of a variable like your lunchbox, and say that you have labelled your lunchbox with your name so that no one at work steals it. Your lunchbox always contains some kind of food, but one day you might put a sandwich in it, and another day you might put leftover spaghetti in it. 
+
+Like your lunchbox has a label and holds food, a variable has a name and holds information.  Let's look at some examples:
 
 ```
 <?php
 
-$breakfast = "bagel"; //Assigns the string "bagel" to the variable $breakfast
-$jamesbond = "Sean Connery"; //Assigns the string "Sean Connery" to the variable $jamesbond
-$jamesbond = "Roger Moore"; //Changes tha value of the variable $jamesbond to "Roger Moore" instead of "Sean Connery"
+$breakfast = "bagel"; 			//Assigns the `string` "bagel" to the variable `$breakfast`
+$jamesbond = "Sean Connery"; 	//Assigns the `string` "Sean Connery" to the variable `$jamesbond`
+$jamesbond = "Roger Moore"; 	//Changes tha value of the variable `$jamesbond` to "Roger Moore" instead of "Sean Connery"
 
 ?>
 
-In the first line, just like the lunch box, we decide that the variable $breakfast will be equal to "bagel". Similarly, the second line assigns the actor's name "Sean Connery" to the variable $jamesbond. However, haven't there been many james bonds? Luckily, variables can change their value, so in the next line we assign "Roger Moore" to the variable $jamesbond instead. 
+In the first line, just like the lunchbox, we decide that the variable `$breakfast` will hold the `string` "bagel". The second line assigns the actor's name "Sean Connery" to the variable `$jamesbond`. However, there have been many James Bonds. Luckily, variables can change their value, so in the next line we can assign "Roger Moore" to the variable `$jamesbond` instead. 
 
-When a variable is holding a number instead of a string, they can be used with arithmatic operators in the same way as numbers. Let's look at an example:
+To create a variable in PHP, its name has to begin with a `$`. Just like the keyword `echo`, the PHP language will recognize `$` at the beginning of a word as a signal that this is the name of a variable; the label on our lunchbox. 
+
+After that, the `=` symbol, called **the assignment operator**, means that you are putting whatever is to the right of that `=` symbol into the lunchbox, labelled with the variable name to the left of the `=`. Finally, we must end the line with a semicolon as usual.
+
+When a variable is holding a `float` or an `integer` instead of a `string`, they can be used with arithmatic operators in the same way as numbers. Let's look at an example:
 
 <?php
 
@@ -25,4 +31,47 @@ $my_favorite_number = $seans_favorite_number + $rogers_favorite_number;
 
 ?>
 
-First, we say that the variable $seans_favorite_number is equal to 7. Then we say that $rogers_favorite_number is double whatever $seans_favorite_number equals, and that $my_favorite_number is the sum of the other two numbers. We could have just written 7 in ourselves instead of using the variable name $seans_favorite_number. But then what if later, Sean decides that his favorite number is 19? I'd have to remember to change it in three different places. By using a variable to store his favorite number, I need only change the first line to say `$seans_favorite_number = 19;` and be done with it.
+First, we say that the variable $seans_favorite_number is equal to 7. Then we say that $rogers_favorite_number is double whatever $seans_favorite_number is, and that $my_favorite_number is the sum of the other two numbers. 
+
+We could have just written 7 ourselves instead of using the variable $seans_favorite_number. But what if Sean decides that his favorite number is actually 19? I'd have to remember to change all of those numbers myself because they all depend on Sean. By using a variable to store his favorite number, I need only change the first line to say `$seans_favorite_number = 19;` and be done with it.
+
+Before you start making your own variables, there are 4 golden rules about naming them you must follow:
+
+1. Names must start with a lowercase letter of the alphabet or a _ (underscore).
+2. Names must only contain the letters a-z, A-Z, the characters 0-9 and _ (underscore). 
+3. Names must not contain spaces.
+4. Names must begin with `$`.
+
+Other than that, it is generally considered good practice to name them like this:
+
+$descriptive_names
+$lower_case_letters
+$underscores_replace_spaces
+
+You could do this, it wouldn't break anything, but it is less readable and easier to mess up:
+
+$cRAZYvarIaBleNAME123456
+
+Because _variable names are case sensitive_, and you'll have to write them over and over again.
+
+Alright, your turn! Let's play with some variables. Let's create a little website that you can test your php code with.  
+
+1. Pick a folder that you will use as your class homework directory.  
+2. Create a folder inside of it called _phpbasics_.
+3. Inside there, create a blank text file called _test.php_ 
+4. Open terminal and `cd` into your homework directory. Enter the command to start the built-in php server: `php -S localhost:8000`
+5. Now your directory root is your new homework folder. So you should be able to view your blank test.php file with this browser address: `http://localhost.com/phpbasics/test.php` 
+6. Let's put something into test.php now. just a blank slate we can test our code in:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+	<h1>Test my php!</h1>
+	<?php echo "Hello world!"; ?>
+</body>
+</html>
+
+//here add some variable exercises.

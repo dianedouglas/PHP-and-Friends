@@ -1,0 +1,38 @@
+You'd be amazed: with just these four primitives (integers, floats, strings, booleans), you have all the types of information you need to write really complex programs!
+
+Data on its own isn't very useful, even if we're storing it in variables. We need to be able to do things with that data. We can do simple math by using data with operators, but for anything more interesting you need functions. 
+
+Think of a function like a [Rube Goldberg Machine](https://www.youtube.com/watch?v=cv5WLLYo-fk). Each of those machines, and each section of those machines, takes some kind of input - like a rolling marble - and uses it to produce some kind of output - like falling dominoes.  
+
+Using a function is like using an operator, we're still shifting blocks of data around. But instead of the way a plus sign is always an addition operator, a function does what we tell it to do, with any data. It just has to take input and produce output.
+
+For example, there's a function that tells you how long a `string` is. Enter this into the body of your test.php file, and then open it up in the browser:
+
+```
+<?php 
+	echo "How many letters to spell Charlie Parker?  ";
+	echo strlen("Charlie Parker"); 
+?>
+```
+
+Again `echo` just means 'print this line to the browser'. The word `strlen` is a function that calculates the number of characters in any `string`. So we tell `strlen` to calculate the number of letters in the `string` "Charlie Parker". Just like our Rube Goldberg machines, that function takes the input and runs it through some internal processes we don't need to know about, figures out it has 14 letters, and then spits that number back to us as the output. 
+
+In PHP you can tell a function when you see one because it has parenthesis after it. Think of the parenthesis as the function's lunchbox. That's what it needs to do its job. To figure out how many characters are in a `string` we need to tell `strlen` which `string` we want to know about. 
+
+Let's try another one:
+
+```
+<?php 
+	$our_input_word = "stressed";
+	echo "What's the reverse of $our_input_word?  ";
+	echo strrev($our_input_word);
+?>
+```
+
+Can you figure out what's going on with each line of this small script? Give it a try before reading on. Then paste it into your test file and try it out. Did it do what you expected? 
+
+1. Create a variable called $out_input_word, and set it equal to the `string` "stressed".
+2. Print out what we're about to do, which is get the reverse of the input word.
+3. Print the output of the function `strrev()`, when it is given the input "stressed".
+
+The pieces of input data that you feed to a function are called **arguments**. The output of a function is called its **return value**. When you use a function, such as on line 3 above, it is called a **function call**, or **calling a function**.
