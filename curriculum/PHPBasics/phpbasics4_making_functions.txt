@@ -111,25 +111,4 @@ function encode($input_phrase){
 }
 ```
 
-So whenever you notice that your code is performing a task more than once, see if you can wrap it up in a function. This is a form of _encapsulation_. 
-
-Here's another example program. 
-
-```
-<?php
-
-$date = format_current_date();
-$schedule = get_calendar_info($date);
-$clients = get_clients($schedule);
-send_reminder_emails($clients);
-
-?>
-```
-
-You can guess what this program does just by reading the function names. It gets and formats today's date, then uses that date to get some calendar events and put them into the variable $schedule. Then it uses that $schedule to get a list of $clients, and then finally a function is called to send an email to each of those clients. The exact code used to perform each of those tasks has been encapsulated into separate functions. We don't need to see it to get the overall flow of the program, in fact it is much simpler this way. 
-
-Suppose I decide that the clients should be emailed the day before their event is scheduled? Easy! Just change the get_calendar_info function to look at the day after the day it is given. You could change the first function to give us the day after the current day, but then you would want to change the name of that function. Each function should perform one task if possible, and it should be summarized by its name. For our example we could change that first function to be named 'format_tomorrows_date'. 
-
-//talk more about naming here and shorten the explanation above.
-
-
+So whenever you notice that your code is performing a task more than once, see if you can wrap it up in a function. Remember to divide and conquer. Split your program up into the simple jigsaw pieces that can be linked together but that do their work independantly. 
