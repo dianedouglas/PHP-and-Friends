@@ -1,35 +1,40 @@
-PHP has many functions built into it, but more often than not you will use these as building blocks for your own functions.  Dividing a program up into functions allows you to keep it organized and localize your errors. If each part of your project has only one simple task to take care of, then problems are easier to trace. Functions are also handy for the same reason variables are - they keep you from repeating yourself. 
+PHP has many functions built into it, but more often than not you will use these as building blocks for your own functions.  Dividing a program up into functions allows you to keep it organized and localize your errors. Those Rube Goldberg machines would be impossible to build if you only looked at the very beginning and end points of the machine. Instead, they can be divided up into tiny, simple pieces: First, the marble roles down a hill. Then it lands and adds weight to a scale. When the scale goes down a different ball is released. 
 
-Let's make a function encodes a message. First, define the input and output. It should take a string as an argument, reverse it, and capitalize it, and then return the new string as our output. The function should be called `encode()`.
+If each part of your project has only one simple task to take care of, then problems are easier to trace. Functions are also handy for the same reason variables are - they keep you from repeating yourself. 
 
-Now we have to tell the computer that is what we want the function to do. This is called _declaring_ a function. A **function declaration** has 4 pieces:
+Let's make a function that encodes a message. First, we define the input and output. It should take a `string` as an argument and return a new `string` made out of the input `string`. The function should be called `encode()`.  Let's accomplish this reversing the `string` and then capitalizing it.
 
-1. The `function` keyword. This tells the computer that we're making a function - just like `$` means 'this is a variable.' or `echo` means 'print this.' 
+Now we have to tell the computer that this is what we want the function to do. This is called _declaring_ a function. A **function declaration** has 4 pieces:
+
+1. The `function` keyword. This tells the computer that we're making a function - just like `$` means 'this is a variable.'
 2. A name for our function. Just like variables, functions always need names.  
-3. () These parenthesis are for any input arguments your function needs. Our function needs a string to manipulate, so it will have one argument, aptly named `$input_phrase`. An argument is just a different kind of variable, so it uses a `$` at the beginning of its name too.
-4. {} These curly brackets are like bookends for your function. They show where it begins and where it ends, just like opening and closing tags in html. 
+3. () These parenthesis are for any input arguments your function needs. Our function needs a `string` to manipulate, so it will have one argument, aptly named `$input_phrase`. Since an argument is just a different kind of variable, it uses a `$` at the beginning of its name too.
+4. {} These curly brackets are like bookends for your function. They show where it begins and where it ends, just like opening and closing tags in html. All the code used to produce output from input in a function goes between the two curly brackets.
 
-Here is a blank frame for our `encode()` function:
+Here is a blank declaration of our `encode()` function. Type all this into your test file. 
 
 ```
 <?php
 
 function encode($input_phrase){
 	//do things.
+	return $output_phrase;
 }
 
 ?>
 
 ```
 
-And here's how it will look when we use it.
+And here's how it will look when we use it. Type this too. It won't work until we fill in our function declaration, but setting up the desired outcome before we write the function code will let us know if our function works or not.
 
 ```
+echo $old_string = "David Bowie";
 $new_string = encode($old_string);
+echo $new_string;
+// $old_string is transformed by the function and the new version is returned to be stored in $new_string. When $new_string is printed it should be the reverse of "David Bowie" in all caps.
 ```
 
-So now, let's fill it in. 
-
+Now, let's fill that function in. 
 
 ```
 <?php
@@ -44,7 +49,9 @@ function encode($input_phrase){
 
 ```
 
-We can shorten this by chaining our functions together.  The strrev function takes one string argument as input and produces the reversed version as output. So we use the outputted return value from strrev as the input argument to the function strtoupper, which outputs the capitalized version. Rather than storing that in yet another variable before returning the final value, we can just directly return the output of the strtoupper function.
+We can shorten this by _chaining_ our functions together.  As we have seen, the `strrev()` function takes one string argument as input and produces the reversed version as output. So we use the outputted return value from `strrev()` as the input argument to the function strtoupper, which outputs the capitalized version. Rather than storing that in another variable before returning it as the final value, we can just directly return the output of the `strtoupper()` function.
+
+PHP will always evaluate parenthesis from the inside out.
 
 ```
 <?php
@@ -56,15 +63,55 @@ function encode($input_phrase){
 ?>
 
 ```
-Here is some code using our encode function. Paste both the declaration above and the html code below into your test file so that you can see the results in your browser:
+Here is some more code using our encode function to type into your test file.  
 
 ```
+<html>
+<head>
+	<title>Using My Function</title>
+</head>
+<body>
+<?php 
+	function encode($input_phrase){
+		return strtoupper(strrev($input_phrase));
+	}
 
-//code using encode.
-
+	echo $first_string = "Miles Davis";
+	echo $second_string = "Trent Reznor";
+	echo $third_string = "Mozart";
+	echo encode($first_string);
+	echo encode($second_string);
+	echo encode($third_string);
+	echo encode(encode($first_string)); // encode "Miles Davis", and then encode that return value.
+	echo encode(encode($second_string));
+	echo encode(encode($third_string));
+ ?>
+</body>
+</html>
 ```
 
-This function is only 1 lines of code, but it is used 8 times in this simple program. But say I now decide that I want to make the output string all lowercase. I will only have to change 1 line of code because I'm using a function - but I'd have to do that 8 times without any human error if I wasn't using a function. So whenever you notice that your code is performing a task more than once, see if you can wrap it up in a function. This is a form of _encapsulation_. 
+Incidentally, PHP doesn't care if you call your function before or after the declaration of the function. This is because all your code is read by what is known as the _PHP interpreter_ before it is run. It'll get together all your function definitions in the current file and any other included files before executing the script the same way a cook gathers all their ingredients before starting to actually prepare a dish.
+
+This is a silly website. This function is only 1 line of code - maybe it was overkill to put it into its own function. Couldn't I have just written it out? Well, it is used 9 times in this simple program. It's annoying, but not too much to type. I'll try it out so you don't have to. 
+
+```
+	echo strtoupper(strrev($first_string));
+	echo strtoupper(strrev($second_string));
+	echo strtoupper(strrev($third_string));
+	echo strtoupper(strrev(strtoupper(strrev($first_string))));
+	echo strtoupper(strrev(strtoupper(strrev($second_string))));
+	echo strtoupper(strrev(strtoupper(strrev($third_string))));
+```
+
+It is actually shorter. That's good, right? But now say the higher-ups decide that they want lowercase letters instead of uppercase. Then I would sigh heavily and change it 9 times over. Then I would rub the bridge of my nose and realize that if I had used a function, I would only have to change 1 word in 1 line of code.
+
+```
+function encode($input_phrase){
+	return strtolower(strrev($input_phrase));
+}
+```
+
+So whenever you notice that your code is performing a task more than once, see if you can wrap it up in a function. This is a form of _encapsulation_. 
 
 Here's another example program. 
 
