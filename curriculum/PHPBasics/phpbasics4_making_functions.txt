@@ -1,0 +1,88 @@
+PHP has many functions built into it, but more often than not you will use these as building blocks for your own functions.  Dividing a program up into functions allows you to keep it organized and localize your errors. If each part of your project has only one simple task to take care of, then problems are easier to trace. Functions are also handy for the same reason variables are - they keep you from repeating yourself. 
+
+Let's make a function encodes a message. First, define the input and output. It should take a string as an argument, reverse it, and capitalize it, and then return the new string as our output. The function should be called `encode()`.
+
+Now we have to tell the computer that is what we want the function to do. This is called _declaring_ a function. A **function declaration** has 4 pieces:
+
+1. The `function` keyword. This tells the computer that we're making a function - just like `$` means 'this is a variable.' or `echo` means 'print this.' 
+2. A name for our function. Just like variables, functions always need names.  
+3. () These parenthesis are for any input arguments your function needs. Our function needs a string to manipulate, so it will have one argument, aptly named `$input_phrase`. An argument is just a different kind of variable, so it uses a `$` at the beginning of its name too.
+4. {} These curly brackets are like bookends for your function. They show where it begins and where it ends, just like opening and closing tags in html. 
+
+Here is a blank frame for our `encode()` function:
+
+```
+<?php
+
+function encode($input_phrase){
+	//do things.
+}
+
+?>
+
+```
+
+And here's how it will look when we use it.
+
+```
+$new_string = encode($old_string);
+```
+
+So now, let's fill it in. 
+
+
+```
+<?php
+
+function encode($input_phrase){
+	$reversed_phrase = strrev($input_phrase); //reverse input phrase.
+	$capitalized_phrase = strtoupper($reversed_phrase); //capitalize it.
+	return $capitalized_phrase; //return it as output.
+}
+
+?>
+
+```
+
+We can shorten this by chaining our functions together.  The strrev function takes one string argument as input and produces the reversed version as output. So we use the outputted return value from strrev as the input argument to the function strtoupper, which outputs the capitalized version. Rather than storing that in yet another variable before returning the final value, we can just directly return the output of the strtoupper function.
+
+```
+<?php
+
+function encode($input_phrase){
+	return strtoupper(strrev($input_phrase));
+}
+
+?>
+
+```
+Here is some code using our encode function. Paste both the declaration above and the html code below into your test file so that you can see the results in your browser:
+
+```
+
+//code using encode.
+
+```
+
+This function is only 1 lines of code, but it is used 8 times in this simple program. But say I now decide that I want to make the output string all lowercase. I will only have to change 1 line of code because I'm using a function - but I'd have to do that 8 times without any human error if I wasn't using a function. So whenever you notice that your code is performing a task more than once, see if you can wrap it up in a function. This is a form of _encapsulation_. 
+
+Here's another example program. 
+
+```
+<?php
+
+$date = format_current_date();
+$schedule = get_calendar_info($date);
+$clients = get_clients($schedule);
+send_reminder_emails($clients);
+
+?>
+```
+
+You can guess what this program does just by reading the function names. It gets and formats today's date, then uses that date to get some calendar events and put them into the variable $schedule. Then it uses that $schedule to get a list of $clients, and then finally a function is called to send an email to each of those clients. The exact code used to perform each of those tasks has been encapsulated into separate functions. We don't need to see it to get the overall flow of the program, in fact it is much simpler this way. 
+
+Suppose I decide that the clients should be emailed the day before their event is scheduled? Easy! Just change the get_calendar_info function to look at the day after the day it is given. You could change the first function to give us the day after the current day, but then you would want to change the name of that function. Each function should perform one task if possible, and it should be summarized by its name. For our example we could change that first function to be named 'format_tomorrows_date'. 
+
+//talk more about naming here and shorten the explanation above.
+
+

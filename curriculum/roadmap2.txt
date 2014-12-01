@@ -9,8 +9,15 @@ operators --> functions. functions have arguments (which are variables)
 
 writing your own functions.
 
-branching/looping
+branching/looping (bools, arrays)
 
 *****
 
 writing functions within classes.
+
+-need to add comment explanation.
+-multiple function arguments
+-scope
+-escape sequences
+-he's probably already talked about indents but make sure to talk about style, for ex multiple php tags.
+
