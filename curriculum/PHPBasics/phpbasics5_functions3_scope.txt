@@ -33,15 +33,79 @@ echo addNumber(9);
 
 This time we have output - we're returning the sum of the two numbers. But, because `$number_to_add` was defined outside of the function's curly brackets, the code inside of the function can't see it. 
 
-Variables need to have a scope to exist in so that they don't interfere with each other. When I'm thinking about variable scope, I like to think of my program as a house. At first it's just a studio apartment - it has one room.  Any time I use curly brackets I add a room to the house. Any variables created inside that new room can only stay in that room unless I tell them otherwise. Only code inside that room can interact with them. Likewise, variables I created in the first room of the house before using any curly brackets can't interract with variables inside of other rooms unless I say so.
+Variables need to have a scope to exist in so that they don't interfere with each other. When I'm thinking about variable scope, I like to think of my program as a house. At first it's just a studio apartment - it has one room.  That one room is the _global scope_. It is outside of all the curly brackets.
+
+Any time I use curly brackets I add a room to the house. Any variables created inside that new room can only stay in that room unless I tell them otherwise. Only code inside that room can interact with them. Likewise, variables I created in the first room of the house, the global scope, can't interract with variables inside of other rooms.
 
 What if I want my variables to be able to walk through walls and break these rules of scope? There are three ways. Using global variables, static variables and references. Each is good for different situations.
 
 Global variables:
 
-
+If you declare a variable inside of a function using the 'global' keyword, then that tells the function to search in the first room of the house for a variable of that samae name and access that. 
 
 Static variables: 
 
+If you declare a variable inside of a function using the 'static' keyword, that means that it doesn't evaporate at the end of the function. It still can't be acessed from outside of the function, but it can be used over and over again while retaining its value.
 
 References:
+
+Say that we have a number, declared in the global scope and several functions declared to change it in various ways like this:
+
+```
+$favorite_number = 1;
+
+function double_favorite_number(){
+	global $favorite_number *= 2;
+}
+
+function subtract_one(){
+	global $favorite_number -= 1;
+}
+
+function opposite_sign(){
+	global $favorite_number *= -1;
+}
+
+```
+Say the whole website is about what my favorite number is. For some reason. And every time the user clicks a button one of those functions changes what my favorite number is. It makes sense to have one variable to hold my favorite number and modify that directly, where these functions are only designed to work with that one number. This is a good use for the global keyword.  
+
+However, say that you have a game where there are two favorite numbers. And you don't know which one the user will be modifying. This is a good time to pass your functions references. Like so:
+
+```
+function double_favorite_number($&number_to_double){
+	global $number_to_double *= 2;
+}
+
+function subtract_one($&number_to_subtract_from){
+	global $number_to_subtract_from -= 1;
+}
+
+function opposite_sign($&opposite_number){
+	global $opposite_number *= -1;
+}
+
+```
+//here show how it's different to print the code this way than without reference. 
+//double check order of the $& 
+//now functions can take any number and modify it directly instead of a copy.
+
+
+
+Here's all 3 kinds showed next to each other:
+
+```
+$favorite_number = 1;
+
+function double_favorite_number(){
+	global $favorite_number *= 2;
+}
+
+function double_any_number($&number_to_double){
+	
+}
+
+function sum_all_numbers($number_to_add){
+	static $total;
+	$total += $number_to_add;
+	echo "The current total is $number_to_add";
+}
