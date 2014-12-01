@@ -1,0 +1,5 @@
+OK, that was tricky. But you did it! You're here aren't you? If it still doesn't make sense in a couple days, go re-read it and it'll probably be easier the second time around.
+
+Onto something easy! ish. Branching!
+
+We can't just go through life always capitalizing or reversing our strings. What if sometimes we want them lowercase, and sometimes we don't? Then we need to know how to make decisions in code, and that is what branching is. There are only three types of branching: if, switch and ternary. And ternary is essentially another if.  

@@ -21,3 +21,6 @@ writing functions within classes.
 -escape sequences
 -he's probably already talked about indents but make sure to talk about style, for ex multiple php tags.
 
+-set a variable to itself.
+-talk about *= and . and .=
+
