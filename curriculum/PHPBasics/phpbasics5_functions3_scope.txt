@@ -1,0 +1,47 @@
+Let's get this out of the way. Everyone is confused by scope at first. If someone says they weren't, they are a liar. It's really ok, you'll get it. With that in mind, take a breath, here we go.
+
+Scope is essentially a fancy word for the programming equivalent of "What happens in Vegas stays in Vegas." Except that instead of Vegas, we have curly brackets: `{}`.
+
+I know, your brow just furrowed. Bear with me. 
+
+Anything you define inside of a set of curly brackets is only visible to code that is also inside of that set of curly brackets, unless stated otherwise. For example, if you try do this inside your test file:
+
+```
+function addFive($a_number){
+	$sum = 5 + $a_number;
+}
+
+addFive(2); 
+echo "The sum of 5 and 2 is: $sum";
+```
+
+Your website will tell you that the sum of 5 and 2 is just blank space. Why? We didn't return a value from our function. It takes input ($a_number) but has no output. We calculated the sum by adding 5 to our input value, but we just stored it in a variable created inside that function. Because that variable `$sum`'s _scope_ is limited to the function `addFive()` the rest of the code can't see it, and thinks that $sum is an unused variable when we try to print it out. 
+
+When the function addFive is run, the variable $sum is created, but when the function finishes running, that variable automatically evaporates back into the ether of your computer's memory.
+
+The other way is true too:
+
+```
+$number_to_add = 5;
+
+function addNumber($a_number){
+	return $a_number + $number_to_add;
+}
+
+echo addNumber(9);
+```
+
+This time we have output - we're returning the sum of the two numbers. But, because `$number_to_add` was defined outside of the function's curly brackets, the code inside of the function can't see it. 
+
+Variables need to have a scope to exist in so that they don't interfere with each other. When I'm thinking about variable scope, I like to think of my program as a house. At first it's just a studio apartment - it has one room.  Any time I use curly brackets I add a room to the house. Any variables created inside that new room can only stay in that room unless I tell them otherwise. Only code inside that room can interact with them. Likewise, variables I created in the first room of the house before using any curly brackets can't interract with variables inside of other rooms unless I say so.
+
+What if I want my variables to be able to walk through walls and break these rules of scope? There are three ways. Using global variables, static variables and references. Each is good for different situations.
+
+Global variables:
+
+
+
+Static variables: 
+
+
+References:
