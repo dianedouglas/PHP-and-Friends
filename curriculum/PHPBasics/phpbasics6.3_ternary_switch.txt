@@ -1,0 +1,94 @@
+
+
+ternary:
+
+A ternary expression looks weird because it involves a `?` and a `:`. But really it could be rewritten as an if-else statement. It's just shorter if your condition is very simple and the code is very short. It looks like this:
+
+```
+	$fuel < 1 ? "there is not enough fuel." : "there is totally enough fuel.";
+```
+The ternary starts with a condition to evaluate immediately to the left of a `?`. This is immediately followed by what should happen if the condition is true. This must be only one line long. Then, to show the end of that line there is a `:`. To the right of the colon is the instruction to follow if the condition is false. Then don't forget to end the line with a semicolon.
+
+They don't show up too often, but these are good for testing if a variable is set before passing it to a function, or assigning the larger of two values to a variable.  Here are a couple more examples: 
+
+```
+	$x = 1; //set x equal to 1 and y to 0.
+	$y = 0;
+	$save_larger = $x > $y ? $x : $y; //put either $x or $y into the variable $save_larger based on which one is larger.
+	echo "$save_larger <br>";
+	$y = 10;
+	$save_larger = $x > $y ? $x : $y;
+	echo $save_larger;
+```
+
+`switch`:
+
+A switch is like an if statement with several elseifs, except that instead of having a condition for each elsif, there is only one expression to decide which code to run. The switch expression doesn't have to evaluate to `true` or `false` like the expressions used with `if` and `elseif`. It could have many possible answers, which we call cases. 
+
+If statements are the most common form of branching, but if you have too many elseifs, it's might be time to consider a switch. A switch is like a menu system, where a single string decides which course of action to take: "save", "open", "close" etc. 
+
+```
+	$menu_choice = "Close";
+	switch ($menu_choice)
+	{
+		case "Save":
+			echo "Save the file.";
+			break;
+		case "Open...":
+			echo "Open the file selection dialog.";
+			break;
+		case "Close":
+			echo "Quit the program.";
+			break;
+	}
+```
+
+In a real program, all the echo statements above could be function calls to do more complex things. 
+
+When writing a switch statement, start with the keyword `switch`, followed by the deciding expression in parenthesis.  Then add curly braces for your cases (possible outcomes of the expression). 
+
+Inside of the curly braces, indent and write the keyword `case` followed by the outcome you want to look for first. Then instead of curly brackets, use `:` and `break;` to begin and end the block of code to execute for each possible outcome. Then add the code that you want to trigger for each case, indented again.
+
+An important note: without `break;`, all of the code after the first case which passes run, up until the next break statement, regardless of if the subsequent cases are true or not. 
+
+For example:
+
+```
+$menu_choice = "Save";
+switch ($menu_choice)
+{
+	case "Save":
+		echo "Save the file. <br>";
+	case "Open...":
+		echo "Open the file selection dialog. <br>";
+	case "Close":
+		echo "Quit the program. <br>";
+}
+```
+
+This will run all three blocks of code because the first one is true. The output will be:
+
+```
+Save the file.
+Open the file selection dialog.
+Quit the program.
+```
+Lastly, it's also a good idea to include a default case for times when none of the case conditions are met. This is just like an `else` condition. `default` doesn't need a break after it if it's at the end of the switch (which is the normal place to put it).
+
+```
+$menu_choice = "I don't want to choose!";
+switch ($menu_choice)
+{
+	case "Save":
+		echo "Save the file.";
+		break;
+	case "Open...":
+		echo "Open the file selection dialog.";
+		break;
+	case "Close":
+		echo "Quit the program.";
+		break;
+	default: 
+		echo "What are you doing Dave?";
+} 
+```

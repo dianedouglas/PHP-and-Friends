@@ -1,0 +1,21 @@
+Computers can handle a lot more than single numbers and words. It's time to learn about collections of numbers and words and booleans called `array`s. There are 2 types of arrays with fancy names. Don't tune out at the names though - you've already used both of these arrays in your brain a lot - you just don't know it yet. They are called **numerically indexed arrays** and **associative arrays**.
+
+Numerically indexed arrays are lists of things (called _elements_) in a set order. 
+
+* A phone number is an array with 10 integers in it. The first three are the area code and the next seven are the phone number. The order of the numbers is important when you remember them.
+* People waiting in line to get on a rollercoaster could be thought of as a numerically indexed array. Each person has a slot in line, which is called their _index_, and again the order of the people has to be remembered, otherwise they'll get upset.
+
+Associative arrays are also lists of things. But instead of storing those elements and recalling them based on their order, each element in the array is saved with a name; a string called a _key_. Here are a couple examples of Associative arrays:
+
+* A shopping catalog has a list products, and each product has a price stored with it. If you want to know what something's price is (the value), you look it up by the name of the product (the key). 
+* A dictionary is a list of words, and stored with each word is its meaning.
+* An address book has a list of names, and stored with each name is some contact info.
+
+You can access certain elements within arrays the same way you can access specific letters in strings, because strings are really numerically indexed arrays of characters.  Just use square brackets and give it the index you want. 
+
+
+There are methods that take arrays as arguments.
+
+
+When you use arrays, you are going to need to be able to do things to each thing in that collection very frequently. You can do that with the keyword `foreach`. It lets you create a **loop**, which is a fancy computer term for repeating a task over and over again until a certain condition is met, just like the conditions we used in if/elseif/else statements.
+

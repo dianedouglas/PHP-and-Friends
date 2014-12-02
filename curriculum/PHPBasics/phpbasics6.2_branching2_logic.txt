@@ -1,0 +1,20 @@
+Let's talk some more about those boolean conditions used in if statements. 
+
+They are created using a short list of pretty self-explanatory operators. Here are some you have probably seen before in math class:
+
+```
+2 > 1 	//evaluates to true. is 2 greater than 1? yes.
+1 >= 1 	//evaluates to true. is 1 greater than or equal to 1? yes.
+2 < 1 	//evaluates to false. is 2 less than 1? no.
+1 <= 1 	//evaluates to true. is 1 less than or equal to 1? yes, it is equal.
+2 == 1	//evaluates to false. is 2 equal to 1? no it is not, so false.
+```
+
+So in your conditions you can have `>` greater than, `>=` greater than or equal to, `<` less than, `<=` less than or equal to, or `==` equal to. These are generally used to compare numbers.
+
+Any function(s) that returns true or false can be called inside the parenthesis for your condition.
+
+Boolean conditions and functions can be chained using **logical operators**. These include `&&`, which means 'and', `||`, which means 'or', and '!' which means 'not'.
+
+//mention being careful of = vs ==
+//mention testing for falseness, and the concept of null.
