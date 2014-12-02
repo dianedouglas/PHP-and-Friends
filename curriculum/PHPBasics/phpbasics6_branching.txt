@@ -1,5 +1,56 @@
-OK, that was tricky. But you did it! You're here aren't you? If it still doesn't make sense in a couple days, go re-read it and it'll probably be easier the second time around.
+OK, that was tricky. But you did it! You're here aren't you? A lot of advanced programmers struggle with scope for a long time, but you're getting it under your belt early. If it still doesn't make sense in a couple days, go re-read it and it'll probably be easier the second time around.
 
-Onto something easy! ish. Branching!
+Now our programs can start to come to life and think for themselves. We're going to teach them to make decisions by **branching**.
 
-We can't just go through life always capitalizing or reversing our strings. What if sometimes we want them lowercase, and sometimes we don't? Then we need to know how to make decisions in code, and that is what branching is. There are only three types of branching: if, switch and ternary. And ternary is essentially another if.  
+Our functions can't just go through life always capitalizing or reversing our strings. What if sometimes we want lowercase, and sometimes we don't? We have to explain that to a function. There are only three types of branching: if, switch and ternary. 
+
+if statements:
+
+Let's create a function that checks a user's age and prints out "You can drink!" if they are over 21, but prints out "No drinks for you!" if they are under 21. 
+
+Our input is the user's age. So our declaration looks like this (follow along in a new file):
+
+```
+function checkAge($user_age){
+
+}
+```
+
+There are 3 keywords used as building blocks in if statements: `if`, `elseif`, and `else`. For this problem, we only need `if` and `else`.  Here's what it looks like, read the comments on the right to see what each line is doing.
+
+```
+function checkAge($user_age){
+	if ($user_age > 21){				//if the user's age is greater than 21...
+		return "You can drink!";		//return this string
+	}
+	else {								//otherwise...
+		return "No drinks for you!";	//return this string.
+	}
+}
+echo " <br> Hi checkAge function! My name is Barbara, and I'm 25. <br>";
+echo checkAge(25);
+echo " <br> Hi checkAge function! My name is Jim, and I'm 52. <br>";
+echo checkAge(52);
+echo " <br> Hi checkAge function! My name is Tiny Tim, and I'm 12. <br>";
+echo checkAge(12);
+```
+
+The output will be:
+
+```
+Hi checkAge function! My name is Barbara, and I'm 25. 
+You can drink! 
+Hi checkAge function! My name is Jim, and I'm 52. 
+You can drink! 
+Hi checkAge function! My name is Tiny Tim, and I'm 12. 
+No drinks for you!
+```
+
+After the `if` keyword, the expression inside the parenthesis is evaluated. If it is true, then the code between the curly brackets is run. If it is false, then the code in the curly brackets after the `else` keyword is run instead. These two values, `true` or `false` are actually a fourth kind of variable called a **boolean**. We have talked about `integer`s, `float`s, and `strings`, now we can add `boolean`s to our collection of primitives. Booleans can only have two values, `true` or `false`. 
+
+//elseif 
+
+ternary:
+
+`switch`:
+
