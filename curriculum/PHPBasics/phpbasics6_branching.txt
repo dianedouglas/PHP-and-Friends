@@ -46,11 +46,49 @@ Hi checkAge function! My name is Tiny Tim, and I'm 12.
 No drinks for you!
 ```
 
-After the `if` keyword, the expression inside the parenthesis is evaluated. If it is true, then the code between the curly brackets is run. If it is false, then the code in the curly brackets after the `else` keyword is run instead. These two values, `true` or `false` are actually a fourth kind of variable called a **boolean**. We have talked about `integer`s, `float`s, and `strings`, now we can add `boolean`s to our collection of primitives. Booleans can only have two values, `true` or `false`. 
+After the `if` keyword, the expression inside the parenthesis is evaluated. The expression used with an if statement must be what is called a **conditional**.  A conditional must evaluate to either `true` or `false`.  For example, our user is either over 21 or they aren't. Actually, this brings us to our fourth variable type called a **boolean**. It is just a very simple variable which is only allowed to have these two values: `true` or `false`. A conditional must evaluate to a boolean.
 
-//elseif 
+If the conditional is `true`, our user is over 21, then the code between the first set of curly brackets next to the `if` conditional is run. If we get `false` and our user is under 21, then the code in the curly brackets after the `else` keyword is run instead. We have talked about `integer`s, `float`s, and `strings`, now we can add `boolean`s to our collection of primitives.
+
+What if we want to display the message "You must still be really excited about drinking!" to a user who's 21? Luckily the keywords `if` and `else` have a friend called `elseif`. It lets you define an alternate condition to look for, and it is structured just like `if`. So we can change our function to look like this:
+
+```
+function checkAge($user_age){
+	if ($user_age > 21){				//if the user's age is greater than 21...
+		return "You can drink!";		//return this string
+	}
+	elseif ($user_age == 21){			//if the user's age is not greater than 21 but it is equal to 21...
+		return "You must still be really excited about drinking!"		
+	else {								//otherwise...
+		return "No drinks for you!";	//return this string.
+	}
+}
+echo " <br> Hi checkAge function! My name is Sam, and I'm 21. <br>";
+echo checkAge(25);
+
+```
+The expression after `if` in the parenthesis is evaluated to `true` or `false`. If it is `true`, the code in its brackets is triggered. If it is false, then the expression after `elseif` is evaluated. If that one is true, (the user is exactly 21), then the code in the next set of curly brackets is run. You can have as many `elseif` conditions as you want, but only one `if` condition, and it has to come first. If none of the `if` or `elseif` conditions evaluate to true, then the code in the curly brackets following the `else` keyword is run.
 
 ternary:
+
+A ternary expression looks weird because it involves a `?` and a `:`. But really it could be rewritten as an if-else statement. It's just shorter if your condition is very simple and the code is very short. It looks like this:
+
+```
+	$fuel < 1 ? "there is not enough fuel." : "there is totally enough fuel.";
+```
+The ternary starts with a condition to evaluate immediately to the left of a `?`. This is immediately followed by what should happen if the condition is true. This must be only one line long. Then, to show the end of that line there is a `:`. To the right of the colon is the instruction to follow if the condition is false. Then don't forget to end the line with a semicolon.
+
+They don't show up too often, but these are good for testing if a variable is set before passing it to a function, or assigning the larger of two values to a variable.  Here are a couple more examples: 
+
+```
+	$x = 1; //set x equal to 1 and y to 0.
+	$y = 0;
+	$save_larger = $x > $y ? $x : $y; //put either $x or $y into the variable $save_larger based on which one is larger.
+	echo "$save_larger <br>";
+	$y = 10;
+	$save_larger = $x > $y ? $x : $y;
+	echo $save_larger;
+```
 
 `switch`:
 
