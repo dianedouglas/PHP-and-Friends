@@ -1,0 +1,50 @@
+But why wouldn't we just write "Hello world!" directly into our html? Because we might want that content to change! Php is a scripting language and it allows us to create _dynamic websites_, which is a fancy term for websites that are created in real time and may change based on things like the user's choices or location. Let's make it do some work for us that html can't do. 
+
+Create a file `called hellomath.php` and save it to the Desktop. Type this into it, and save it: 
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello PHP!</title>
+  </head>
+  <body>
+    <h1>My first php page</h1>
+    <h3>I'm going to use php to do some math in your browser so that I don't have to calculate it myself! </h3>
+    <h2>200 x 245 + 999 = <?php echo 300 * 245 + 999; ?></h2>
+  </body>
+</html>
+```
+Now open it in your browser with this address: `http://localhost:8000/hellomath.php`. You'll see the product of that calculation, right on our webpage. Let's learn how this works:
+
+There are 4 basic types of information used inside of php. These are called primitives, and they are the basic building blocks of the language. First, we have two kinds of numbers - `integer`s, which are whole numbers like we used in the last example, and `float`s, which are numbers with a decimal point. Then we have `string`s, which are any kind of letters or sentences enclosed in quotes. The last kind is called a `boolean`. It has two states: `true` or `false`, just like a coin is either heads or tails.
+
+```
+Integers: 1, 2, -33, 19875
+Floats: 2.4, -9.99, 19.0, 3.14159ß
+Strings: "Once upon a time...", "Douglas Adams", "145", "#@%$@!!!!"
+Booleans: `true`, `false` (only two possible values)
+```
+
+Let's dissect the rest of our php code and learn a couple rules about it. In our hello world page, we had this line: `echo "Hello world!"; `
+
+We are using a special word called `echo` to tell the browser to print whatever comes after that word on the line, up until the semicolon at the end. Special words like `echo` that are built into a computer language are called **keywords**.
+
+Then you can see by the double quotes that we have a `string` which says "Hello world!". This is the message to print and anything you put in the quotes here will be shown on your browser. Lastly, we have the semicolon. In php, every command must end with a semicolon. 
+
+Our next page has this line of php in it: `<?php echo 300 * 245 + 999; ?>`
+
+This is just doing some math for us using integers. The `*` symbol means multiply, and the `+` symbol means add. These arithmetic symbols are examples of `operators`. If `integer`s, `float`s, `string`s and `boolean`s are building blocks, operators would be different ways to move them around and stack them. 
+
+We do still need to use the word `echo` at the beginning of the line before the numbers, because without it, the browser would have just made the calculation, nodded its head in satisfaction that the task was done, and then promptly forgotten about it and displayed whatever html was around it. And again, the semicolon at the end of the math marks the end of the php command.
+
+OK it's your turn! 
+
+Create a simple webpage which uses php to display 3 math calculations using these arithmetic operators, as well as both integers and floats:
+
+* multiply: * 
+* divide: /
+* add: +
+* subtract: - 
+
+Now, within your php code, print out a message at the end of your math, in a separate paragraph, using the `echo` keyword with a `string`.

@@ -1,0 +1,226 @@
+Let's get this out of the way. Everyone is confused by scope when it is first introduced. If someone says they weren't, then they are a liar. It's really ok, you'll get it. With that in mind, take a breath, here we go.
+
+Scope is essentially a fancy word for the programming equivalent of "What happens in Vegas stays in Vegas." Except that instead of Vegas, we have curly brackets: `{}`.
+
+I know, your brow just furrowed. Bear with me. 
+
+Anything you define inside of a function's set of curly brackets is only visible to code that is also inside of that set of curly brackets, unless stated otherwise. For example, if you try do this inside your test file:
+
+```
+function addFive($a_number){
+	$sum = 5 + $a_number;
+}
+
+addFive(2); 
+echo "The sum of 5 and 2 is: $sum";
+```
+
+Your website will tell you that the sum of 5 and 2 is just blank space. Why? Because we didn't return a value from our function. It takes input ($a_number) but has no output. We calculated the sum by adding 5 to our input value, but we just stored it in a variable created inside that function. That variable `$sum`'s **scope** is limited to the function `addFive()` so the rest of the code can't see it, and thinks that `$sum` is a blank unused variable when we try to print it out. 
+
+When the function `addFive()` is run, the variable `$sum` is created, but when the function finishes running, that variable automatically evaporates back into the 'ether' of your computer's memory.
+
+It's true the other way too:
+
+```
+$number_to_add = 5;
+
+function addNumber($a_number){
+	return $a_number + $number_to_add;
+}
+
+echo "The sum of 9 and $number_to_add is: ";
+echo addNumber(9);
+```
+
+Why does it say that the sum of 9 and 5 is blank? Well, it gives us a warning on the page: `Notice: Undefined variable: number_to_add`. That tells us that somewhere in our code, php can't figure out what `$number_to_add` means. This time we have output - we're returning the sum of the two numbers. But, because `$number_to_add` was defined outside of the function's curly brackets, the code inside of the function can't see it. So your function `addNumber()` thinks that $number_to_add is just a new blank variable, and doesn't know what to do with it.
+
+Variables need to have a scope to exist in so that they don't interfere with each other. When I'm thinking about variable scope, I like to think of my program as a house. At first it's just a studio apartment - it has one room.  That one room is called the **global scope**. It is outside of all the curly brackets.
+
+Any time I use curly brackets to make a function or something, I am adding a room to the house. Any variables created inside that new room can only stay in that room unless I tell them otherwise. Only code that lives inside that room can interact with variables created in that room. Likewise, variables I created in the first room of the house, in the global scope, can't interact with variables inside of other rooms.
+
+What if I want my variables to be able to walk through walls and break these rules of scope? There are three ways. Using global variables, static variables and references. Each is useful for different situations.
+
+* Global variables:
+
+If you declare a variable inside of a function using the `global` keyword, then that tells the function that the variable already lives in the global scope, so don't bother creating a new one. So we can fix our previous example like this: 
+
+```
+$number_to_add = 5;
+
+function addNumber($a_number){
+	global $number_to_add;  //global variable declarations need their own line.
+	return $a_number + $number_to_add;
+}
+
+echo "The sum of 9 and $number_to_add is: ";
+echo addNumber(9);
+```
+There, now it works, yay!
+
+Let's do another example: say that we have a number, declared in the global scope and we have a game where the user can click around on the screen to change that number.  They can either double it, subtract 1 from it or triple it. We can accomplish this easily by creating three functions for the user to choose from by clicking, and have each of them modify the number using the `global` keyword. Here's what that looks like. Instead of waiting for the user to click on the screen, for now we will test by calling each function once and then printing out our final number. Try this in your test file:
+
+```
+$favorite_number = 3;
+
+function double_favorite_number(){
+	global $favorite_number; //global variable declarations need their own line.
+	$favorite_number = 2 * $favorite_number; 
+}
+
+function subtract_one(){
+	global $favorite_number;
+	$favorite_number = $favorite_number - 1;
+}
+
+function triple_favorite_number(){
+	global $favorite_number; 
+	$favorite_number = $favorite_number * 3;
+}
+
+echo $favorite_number; 		//print initial $favorite_number.
+echo ", ";					//print out comma and space between numbers.
+double_favorite_number(); 	//changes $favorite_number to 6 by taking the value of $favorite_number, multiplying it by 2, and putting the result back into the $favorite_number lunchbox.
+echo $favorite_number;          //print the new value of $favorite_number.
+echo ", ";
+subtract_one(); 			//changes $favorite_number to 5.
+echo $favorite_number;
+echo ", ";
+triple_favorite_number();	//changes $favorite_number to 15.	
+echo $favorite_number;
+echo "!"; //page should read "3, 6, 5, 15!"
+
+```
+
+Incidentally, we can shorten this with two useful tricks you should know. First, we can add strings together using the `.` symbol. So instead of all those extra `echo` keywords at the end, we can do this:
+
+```
+echo $favorite_number . ", ";
+double_favorite_number(); 
+echo $favorite_number . ", ";
+subtract_one();
+echo $favorite_number . ", ";
+triple_favorite_number();	
+echo $favorite_number . "!"; 
+```
+
+Also instead of doubling our number by saying `$favorite_number = $favorite_number * 2;` we can use this shorthand symbol `*=`. It means the same thing if you write it as: `$favorite_number *= 2;`. There are similar operators for `+`, `-`, `*`, `/`, and `.`. Just follow the symbol with an equals sign. So here is how we would rewrite our functions:
+
+```
+function double_favorite_number(){
+	global $favorite_number;   // global variable declarations need their own line.
+	$favorite_number *= 2;   // set $favorite_number equal to itself * 2. 
+}
+
+function subtract_one(){
+	global $favorite_number;
+	$favorite_number -= 1;   // set $favorite_number equal to itself - 1.
+}
+
+function triple_favorite_number(){
+	global $favorite_number; 
+	$favorite_number *= 3;  // set $favorite_number equal to itself * 3.
+}
+```
+
+Static variables: 
+
+If you declare a variable inside of a function using the 'static' keyword, that means that it doesn't evaporate at the end of the function. It still can't be accessed from outside of the function, but it can be used over and over again while retaining its value.
+
+To use our house reference, let's say you hire some contractors to work on all your extra rooms. Declaring a function is essentially writing a blueprint for for your contractors to use, so they know how to build your room. But the room doesn't actually get built until you call the function. And, you have some very annoyed fictional contractors because as soon as they build the room, you tell them they have to tear it back down again. That's why variables created inside of functions are only temporary - usually they are created and destroyed every time you call the function.  But creating a static variable is like having a ghost that hangs around that corner of the house and waits for you to rebuild its room by calling the function again. Then it comes back to life with all its memories intact! 
+
+A good example of when to use a static variable is if you have a counter in a function. Say that part of our game above is that the user has to click 15 times in a certain time limit. Then we could create a function to call every time the user clicks and it could count the number of times it has been called.
+
+```
+function clickCounter(){
+	static $number_of_clicks = 0; //If it hasn't already been created, create the variable $number_of_clicks and set it to 0.
+	++$number_of_clicks;  //This is shorthand for 'add 1 to this variable.'
+	echo "The number of clicks so far is: $number_of_clicks <br>"; 	//Print the current number of times this function has been called.
+	//The <br> is just an html line break which means start a new line.
+}
+
+//Instead of actually clicking the mouse, we will test by calling the function 5 times.
+clickCounter();
+clickCounter();
+clickCounter();
+clickCounter();
+clickCounter();
+``` 
+
+References:
+
+Let's modify our game so that two people can play, each with a favorite number. We don't know which number the user will be modifying, so we can't just modify the global variable directly from the function. How do we tell our function which variable to modify? We could pass it in as an argument, right? Well, let's try it and see. But remember to break your problems into smaller problems. So let's just try changing the first function and put that into our test file.
+
+```
+$player1_number = 3;
+$player2_number = 5;
+
+function double_favorite_number($favorite_number){
+	global $favorite_number;
+	$favorite_number *= 2; 
+}
+
+echo "Player 1's favorite number is: $player1_number <br>";
+echo "Player 2's favorite number is: $player2_number <br>";
+double_favorite_number($player1_number);
+double_favorite_number($player2_number);
+echo "We've doubled Player 1's favorite number. Now it is: $player1_number <br>";
+echo "We've doubled Player 2's favorite number. Now it is: $player2_number <br>";
+```
+
+Welp, that didn't work. The numbers didn't change! That's because when we pass a variable to a function as an argument a copy is made. Remember when you were being a function and your boss passed you a document to photocopy and told you how many copies to make? Well, your boss would never trust you with the original document unless they absolutely had to. They usually would just hand you a copy to use. 
+
+Functions are the same way. They make use a copy of the variables passed in using arguments and then the copy is modified inside of the function so that we can return a result. That's why the variables inside the function can safely be created and destroyed every time the function is run. Variables created inside of functions or passed in as arguments are only temporary lunchboxes used to hold copies of the information that the function needs to do its job. We say that their scope is limited to the function or that they are **local** to that function.
+
+Passing a function a reference instead of a variable is a little like giving it a business card for that variable instead of a copy of the variable itself. The reference contains all the contact information for that variable so that the function knows exactly where to find it to modify it or get information from it. 
+
+This will fix our game's problem and to do it we use the `&` symbol at the beginning of the argument to tell the function to use a reference.  Otherwise, nothing changes - no need for the global keyword. You treat it like a regular argument to a function and inside the function you can do things with it. But when you call the function, the variable you pass it will directly be modified.
+
+```
+$player1_number = 3;
+$player2_number = 5;
+
+function double_favorite_number(&$favorite_number){
+	$favorite_number; //global variable declarations need their own line.
+	$favorite_number *= 2; 
+}
+
+echo "Player 1's favorite number is: $player1_number <br>";
+echo "Player 2's favorite number is: $player2_number <br>";
+double_favorite_number($player1_number);
+double_favorite_number($player2_number);
+echo "We've doubled Player 1's favorite number. Now it is: $player1_number <br>";
+echo "We've doubled Player 2's favorite number. Now it is: $player2_number <br>";
+```
+
+Alright, that's a lot to take in! Let's recap. 
+
+Local variables:
+
+* By default, variables have local scope. 
+* They can be given global scope or static scope with the 'global' or 'static' keywords.
+* Local variables are only visible to the scope they were created in, generally as bookended by curly brackets in a function. For example, variables created inside of functions are scoped to that function(also called _function scope_). 
+* Variables created outside of any curly brackets are in the global scope, but they are still local to that level of scope. They generally can't see variables created inside of the function scope.
+
+Global variables:
+
+* If you put the 'global' keyword before a variable declaration in a function, that tells the function to look outside of its curly brackets for that variable.
+
+Static variables:
+
+* Right in the middle. Static variables are still local to the function they were created in, but they aren't thrown out whenever the function runs.
+* They will save their value between function calls.
+
+References:
+
+* Passing a reference to a function instead of a variable allows the function to modify the variable itself as if it were global instead of using a local copy to return an output.
+* To pass a reference to a function, use the `&` symbol before the argument you want to be used as a reference.
+
+```
+function setVariableToPi(&$modify_me_directly){
+	$modify_me_directly = 3.141592;
+}
+```
+
+
+
+We say that their scope is limited to the function or that they are **local** variables, local to that function. 

@@ -86,21 +86,30 @@
 	// echo "We've doubled Player 1's favorite number. Now it is: $player1_number <br>";
 	// echo "We've doubled Player 2's favorite number. Now it is: $player2_number <br>";
 
-	$player1_number = 3;
-	$player2_number = 5;
+	// $player1_number = 3;
+	// $player2_number = 5;
 
-	function double_favorite_number(&$favorite_number){
-		$favorite_number; //global variable declarations need their own line.
-		$favorite_number *= 2; 
+	// function double_favorite_number(&$favorite_number){
+	// 	$favorite_number; //global variable declarations need their own line.
+	// 	$favorite_number *= 2; 
+	// }
+
+	// echo "Player 1's favorite number is: $player1_number <br>";
+	// echo "Player 2's favorite number is: $player2_number <br>";
+	// double_favorite_number($player1_number);
+	// double_favorite_number($player2_number);
+	// echo "We've doubled Player 1's favorite number. Now it is: $player1_number <br>";
+	// echo "We've doubled Player 2's favorite number. Now it is: $player2_number <br>";
+
+	$number_to_add = 5;
+
+	function addNumber($a_number){
+	  global $number_to_add;
+	  return $a_number + $number_to_add;
 	}
 
-	echo "Player 1's favorite number is: $player1_number <br>";
-	echo "Player 2's favorite number is: $player2_number <br>";
-	double_favorite_number($player1_number);
-	double_favorite_number($player2_number);
-	echo "We've doubled Player 1's favorite number. Now it is: $player1_number <br>";
-	echo "We've doubled Player 2's favorite number. Now it is: $player2_number <br>";
-
+	echo "The sum of 9 and $number_to_add is: ";
+	echo addNumber(9);
 	?>
 </body>
 </html>
