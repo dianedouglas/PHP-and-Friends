@@ -1,0 +1,50 @@
+
+A function is a word which defines an action like Think of a function like a [Rube Goldberg Machine](https://www.youtube.com/watch?v=cv5WLLYo-fk). Each of those machines, and each section of those machines, takes some kind of input - like a rolling marble - and uses it to produce some kind of output - like falling dominoes.  
+
+Using a function is like using an operator, we're still using them to shift or alter blocks of data. But instead of the way a plus sign is always an addition operator, a function does what we tell it to do, with any data. It just has to take input and produce output.
+
+For example, there's a function that tells you how long a `string` is. Enter this into the body of your test.php file, and then open it up in the browser:
+
+```
+	echo "How many letters to spell Charlie Parker?  ";
+	echo strlen("Charlie Parker"); 
+```
+
+Again `echo` just means 'print this line to the browser'. The word `strlen()` is a function that calculates the number of characters in any `string`. So we tell `strlen` to calculate the number of letters in "Charlie Parker" by putting the `string` into the parenthesis next to the word `strlen`.
+
+Just like our Rube Goldberg machines, the `strlen()` function takes the input and runs it through some internal processes we don't need to know about, figures out it has 14 letters, and then spits that number back to us as the output. 
+
+In php you can tell a function when you see one because it has parenthesis after it. Think of the parenthesis as the function's lunchbox. And into that lunchbox you must place every piece of information the function needs to do its job. For example, to figure out how many characters are in a `string` we need to tell `strlen` which `string` we want to know about. 
+
+Let's try another one. Type this into your test file. Try to figure out what it's doing as you type it, and write a comment next to each line:
+
+```
+	$our_input_word = "stressed";
+	echo "What's the reverse of $our_input_word?  ";
+	echo strrev($our_input_word);
+```
+
+Here it is, line by line:
+
+1. Create a variable called $our_input_word, and set it equal to the `string` "stressed".
+2. Print a message. When the double quotes see the `$` they recognize that `$our_input_word` is a variable, and its value will be printed. 
+3. Print the output of the function `strrev()`, when it is given the input "stressed".
+
+A few important names to remember:
+
+* The pieces of input data that you feed to a function are called **arguments** or **parameters**. 
+* The output of a function, like the reversed `string` above, is called its **return value**. 
+* When you use a function, such as on line 3 above, it is referred to as a **function call**, or **calling a function**.
+
+A function can also have multiple arguments. For example, as the name would suggest, the function `str_repeat()`'s job is to take a `string` and repeat it some number of times. If your boss told you to make a bunch of photocopies of a document what would you need to ask? You'd have to ask how many copies to make, and you'd need a copy of the document (or the original).  
+
+You are now behaving like a function (good work!) and those are your arguments. If you are not given either of those arguments, then you won't be able to do your job. So remember to always give your functions all of their required arguments. If you give them more than the required number of arguments, they will be read from left to right and extra ones will be ignored.
+
+Here's what it looks like. Type this out in your test file.
+
+```
+	echo str_repeat("I'm a function! ", 3);
+	//prints out "I'm a function! " three times.
+```
+
+Multiple arguments are separated by commas within the function's parenthesis. In this case the first argument is the `string` to repeat and the second is the number of repeats.

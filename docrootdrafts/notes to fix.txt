@@ -1,0 +1,11 @@
+couple examples for first section - forms, lists, cool things to do with php
+diagram for request response - google presentations with screenshot
+dropbox folder for images
+
+operators lesson - escape characters for printing $.
+
+careful with run on sentences and comma splices: Here is one thought, here is a totally different thought. don't use a comma there.
+simplify
+examples
+capitalize keynames
+if you use a colon and then a list, don't use a word like 'but' after the list.
