@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/fortune_styles.css">
+  <title>Fortune Teller</title>
+</head>
+<body>
+  <h1></h1>
+  <div class="container">
+    <h1>Hi! I'm a fortune teller!</h1>
+
+    <form action="http://localhost:8000/fortune_teller.php">
+      <div class="form-group">
+        <label for="birth_month">Please enter the month you were born in.</label>
+        <input id="birth_month" name="birth_month" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="favorite_color">Please enter your favorite color.</label>
+        <input id="favorite_color" name="favorite_color" class="form-control" type="text">
+      </div>
+      <button type="submit" class="btn-success">Submit</button>
+    </form>
+
+  </div>
+</body>
+</html>

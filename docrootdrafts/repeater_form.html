@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/parrot_styles.css">
+  <title>String Repeating</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Hi! I'm a parrot website. I'll repeat back what you say!</h1>
+
+    <form action="http://localhost:8000/repeater.php">
+      <div class="form-group">
+        <label for="repeat_text">What would you like me to say?</label>
+        <input id="repeat_text" name="repeat_text" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="number_of_repeats">How many times should I say it?</label>
+        <input id="number_of_repeats" name="number_of_repeats" class="form-control" type="text">
+      </div>
+      <button type="submit" class="btn-success">Submit</button>
+    </form>
+
+  </div>
+</body>
+</html>
