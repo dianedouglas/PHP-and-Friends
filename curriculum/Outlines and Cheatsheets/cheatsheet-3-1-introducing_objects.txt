@@ -1,0 +1,6 @@
+An **object** can take certain actions, called **methods**, which you define.
+
+an object is a self-contained entity that consists of both data and procedures to manipulate the data.
+
+We've worked with two types of collections for storing data: numerically indexed arrays and associative arrays.  You can use them as arguments and return values in functions. Say we have an address book, which is a numerically indexed array of 500 names. What if we want a list of all the people whose last names start with D, that live in the Portland area? We could write function to sort the names alphabetically by last name, then another function to separate out the names that start with a given letter, then finally another function to only give us names from a certain area. But wouldn't it be great if we could just tell the address book to do all that for us and just give us the data we want? To do that we need another kind of data collection called an **object**.
+

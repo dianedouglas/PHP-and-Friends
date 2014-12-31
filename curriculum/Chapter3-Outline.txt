@@ -9,7 +9,7 @@ Terminology:
     An object belongs to a class = just like strings and numbers (check if we explained int / float) 
 
 Outline:
-    Define a class - looks like a function stylistically.     
+    Define a class - looks like a function stylistically.     -done
 
     Define a method in that class.
 
@@ -17,16 +17,18 @@ Outline:
 
     call its method.
 
-    example:    
-    jukebox! holds several cd's, has a make and model, has actions like play, stop, next etc.
-    method to insert coins, laser disc reader is the method used to play the music.
-
-    Spacing/formatting
-
     capitalization warning:
     DO NOT name your class and its method the same thing - it will cause errors. 
     Even if they are capitalized differently.
     function names and class names are case insensitive, while variable names are case sensitive.
+
+    example
+    
+    jukebox! holds several cd's, has a make and model, has actions like play, stop, next etc.
+    method to insert coins, laser disc reader is the method used to play the music.
+
+    Spacing/formatting -done
+
 
 
 Cheatsheet:
@@ -54,7 +56,7 @@ Cheatsheet:
 
 
 2. Properties
-Goal: be able to define a class with both methods and properties, and use those properties and methods within the object or outside of it with $this.
+Goal: be able to define a class with both methods and properties, and use those properties and methods within the object with $this or outside of it .
 
 Terminology: 
     property, visibility, public, private
