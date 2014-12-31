@@ -1,0 +1,198 @@
+CHAPTER 3 week 1
+
+1. Introducing objects
+Goal: be able to define a class, instantiate an object, call a method on it.
+
+Terminology: 
+    we call things objects and the actions you can tell those things to do methods
+    methods - functions that belong to an object.
+    An object belongs to a class = just like strings and numbers (check if we explained int / float) 
+
+Outline:
+    Define a class - looks like a function stylistically.     
+
+    Define a method in that class.
+
+    Instantiate an object (keyword 'new') of that class 
+
+    call its method.
+
+    example:    
+    jukebox! holds several cd's, has a make and model, has actions like play, stop, next etc.
+    method to insert coins, laser disc reader is the method used to play the music.
+
+    Spacing/formatting
+
+    capitalization warning:
+    DO NOT name your class and its method the same thing - it will cause errors. 
+    Even if they are capitalized differently.
+    function names and class names are case insensitive, while variable names are case sensitive.
+
+
+Cheatsheet:
+
+    Definitions of: object, class, method
+
+    A blank class and method definition with formatting/naming rules.
+
+        class MyClass
+        {
+            
+            function myFunction()
+            {
+                //...
+            }
+        }
+
+    Instantiate a class:
+
+        $object = new MyClass;
+
+    Call a method on an object:
+
+        $object->myMethod();
+
+
+2. Properties
+Goal: be able to define a class with both methods and properties, and use those properties and methods within the object or outside of it with $this.
+
+Terminology: 
+    property, visibility, public, private
+
+Outline:
+
+    A property is a variable that belongs to an object, like a method is a function that belongs to an object. methods have () on the end and properties don't.
+
+    public vs private. this is a property's 'visibility' you must label it.
+
+    Get and set a public property. 
+
+    rule of $:
+    Use $ on all variables, inside and out of functions, BUT do not use the $ on any member of a class unless you are defining it. 
+    The -> means you don't need it.
+
+    $this - used for referring to an object's properties or functions within that object.
+
+    warning:    default values for properties MUST be constant - not function calls or expressions. 
+    public $thing = $level * 2; //is not allowed.
+    public $thing = time(); //is not allowed.
+
+
+
+3. Inheritance
+Goal: Be able to extend a class and instantiate it. 
+
+Terminology: parent/child, subclass/superclass. extends. 
+
+Outline:
+    show example of inheritance with everything public.
+
+    why is this useful? Person class example. wouldn't want to rewrite the person class for every type of person. you could subclass into student, teacher etc.
+
+    keyword 'extends'
+
+
+4. Encapsulation
+Goal: Understand the idea of encapsulation - you should use methods to get and set your properties.
+
+Terminology: Encapsulation. 
+
+Outline:
+    encapsulation is the idea that you should make your class in such a way that only its methods can manipulate its properties. 
+
+        safer, more portable. if you are relying on outside code to set the make and model of your jukebox when it's created and then you move the 
+        jukebox to a new program, you might forget that and end up with a jukebox created in the year NULL by the company NULL.
+        fix faulty code within your class rather than the whole program.
+        lets you add features by updating classes with new classes and if you have problems you can switch the old ones back in. 
+    
+    do this by using public and private on methods as well as properties. methods are public by default. 
+
+
+5. Constructors
+Goal: Be able to use constructor methods to set up your object.  
+
+Terminology: Constructor 
+
+Outline:
+
+    you can pass arguments to objects too. They get passed to the constructor method. used to initialize properties and call other methods to set up the object.
+    name it __construct.
+
+    class User
+    {
+        function __construct($argument1, $argument2)
+        {
+            //set things up.
+        }
+    }
+
+    Remember you can't have less arguments than the ones defined in your constructor.
+
+
+6. Scope
+Goal: Be able to understand how objects can talk to each other and to their parents. 
+
+Terminology: parent, protected, clone.
+
+Outline:
+
+    * constructors on children override constructors on parents, just like any other method (as described in 3: Inheritance) so, if you need to call a method in a parent from a child, use keyword parent
+
+    * scope of properties and methods, what is protected?
+
+        3 keywords: public, protected and private. you've seen public and private before, protected means that a property or method is private, but children can use it. 
+        Here is how they all fit together and should be used.
+            to use these, just place the keyword right before the property name or, for methods, before the function keyword in the declaration.
+            public
+                methods are public by default, anyone can call them from anywhere in the code.
+                properties are public if they are declared with the 'public' or 'var' keywords, or implicitly declared.
+                they can be read or set from anywhere.
+                var is older, but still valid. might see it in other places.
+
+                use this when:
+                outside code SHOULD be able to access this member and extending classes SHOULD inherit it.
+
+            protected
+                these properties and methods can be used only by the object's class methods and those of any subclasses.
+                not from outside the class.
+
+                use this when:
+                outside code SHOULD NOT be able to access this member and extending classes SHOULD inherit it.
+
+            private
+                these properties and methods can be used only by methods within the same class. not subclasses.
+
+                use this when:
+                outside code SHOULD NOT be able to access this member and extending classes SHOULD NOT inherit it.
+
+
+    * keyword clone:
+        $object1 = new Classname();
+        $object2 = $object1;
+        both $object2 and $object1 now hold the memory address of the new instance of Classname. 
+        if I modify a property using either $object1 or $object2, I am modifying the property on the same object. 
+        if I actually want an entirely separate copy of an object to modify, I use the clone keyword.
+
+        $object2 = clone $object1;
+
+CHAPTER 4 week 2
+
+
+BDD with PHPUnit
+-BDD ideas: interface before implementation, red-green-refactor, divide and conquer - break a problem into small pieces and write the simplest possible specs first.
+-installation
+-writing your first test: structure of test file (prereqs: load an external file, extend a class, write a test function)
+    cheat sheet: 
+        blank test function
+
+order of bdd:
+Interfaces before implementation
+BDD in plain english 
+Red green refactor - take out repetition, just talk about each step in the lesson, include all 7 in cheat sheet
+
+
+
+eventually discuss:
+cloning objects
+static methods and properties (class methods/properties)
+constants in classes

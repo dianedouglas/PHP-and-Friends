@@ -35,7 +35,11 @@ Terminology:
 	class MyClass
 	{
 		$myproperty = "default";
-		public function myfunction(){//...}
+		
+		public function myfunction()
+		{
+			//...
+		}
 	}
 
 		$this->myproperty;

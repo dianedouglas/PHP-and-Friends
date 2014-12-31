@@ -1,0 +1,96 @@
+Outline:
+
+1. Introducing objects
+Goal: be able to define a class, instantiate an object, call a method on it.
+
+Outline: 
+    Terminology: 
+        we call things objects and the actions you can tell those things to do methods
+        methods - functions that belong to an object.
+        An object belongs to a class = just like strings and numbers (check if we explained int / float) 
+
+    Define a class - looks like a function stylistically.     
+
+    Define a method in that class.
+
+    Instantiate an object (keyword 'new') of that class 
+
+    call its method.
+
+    example:    
+    jukebox! holds several cd's, has a make and model, has actions like play, stop, next etc.
+    method to insert coins, laser disc reader is the method used to play the music.
+
+    Spacing/formatting
+
+    capitalization warning:
+    DO NOT name your class and its method the same thing - it will cause errors. 
+    Even if they are capitalized differently.
+    function names and class names are case insensitive, while variable names are case sensitive.
+
+
+Cheatsheet:
+
+    Definitions of: object, class, method
+
+    A blank class and method definition with formatting/naming rules.
+
+        class MyClass
+        {
+            
+            function myFunction()
+            {
+                //...
+            }
+        }
+
+    Instantiate a class:
+
+        $object = new MyClass;
+
+    Call a method on an object:
+
+        $object->myMethod();
+
+
+2. Properties
+Goal: be able to define a class with both methods and properties, and use those properties and methods within the object or outside of it with $this.
+
+    Terminology: 
+        property, visibility, public, private
+
+    A property is a variable that belongs to an object, like a method is a function that belongs to an object.
+
+    public vs private. this is a properties 'visibility '
+
+    Get and set a public property. 
+
+    rule of $:
+    Use $ on all variables, inside and out of functions, BUT do not use the $ on any member of a class unless you are defining it. 
+    The -> means you don't need it.
+
+    $this - used for referring to an object's properties or functions within that object.
+
+3. Inheritance
+Goal: Be able to extend a class and instantiate it. Be able to use the public, protected, private keywords.
+
+    why is this useful? Person class example. wouldn't want to rewrite the person class for every type of person. you could subclass into student, teacher etc.
+
+    keyword 'extends'
+
+    keyword protected 
+
+
+
+
+
+public, protected or private.
+
+BDD with PHPUnit
+-BDD ideas: interface before implementation, red-green-refactor, divide and conquer - break a problem into small pieces and write the simplest possible specs first.
+-installation
+-writing your first test: structure of test file (prereqs: load an external file, extend a class, write a test function)
+    cheat sheet: 
+        blank test function
+
+

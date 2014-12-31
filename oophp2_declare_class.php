@@ -62,7 +62,7 @@ clone:
 	$object2 = clone $object1;
 
 rule of $:
-Use $ on all variables, inside and out of functions, BUT do not use the $ on any member of a class - property or function. 
+Use $ on all variables, inside and out of functions, BUT do not use the $ on any member of a class unless you are defining it. 
 The -> means you don't need it.
 
 reminder of capitalization warning:
